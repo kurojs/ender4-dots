@@ -1,0 +1,4 @@
+#!/bin/bash
+query="$*"
+yt-dlp "ytsearch:$query" -o - --quiet --no-warnings |
+  mpv - --really-quiet --no-terminal --term-osd-bar=no

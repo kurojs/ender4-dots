@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# OCR Screenshot script for Japanese text
+# Captures selected area and copies OCR text to clipboard
+
+# Create temporary file
+temp_file="/tmp/ocr_screenshot_$(date +%s).png"
+
+# Capture screenshot of selected area
+if grim -g "$(slurp)" "$temp_file" 2>/dev/null; then
+    # Perform OCR on the captured image (Japanese)
+    ocr_text=$(tesseract "$temp_file" stdout -l jpn 2>/dev/null)
+    
+    # Copy to clipboard if OCR was successful
+    if [ -n "$ocr_text" ]; then
+        echo "$ocr_text" | wl-copy
+        notify-send "OCR" "Text copied to clipboard" -t 2000 2>/dev/null || echo "OCR: Text copied to clipboard"
+    else
+        notify-send "OCR" "No text detected" -t 2000 2>/dev/null || echo "OCR: No text detected"
+    fi
+    
+    # Clean up temporary file
+    rm -f "$temp_file"
+else
+    notify-send "OCR" "Screenshot cancelled" -t 2000 2>/dev/null || echo "OCR: Screenshot cancelled"
+fi

@@ -17,6 +17,16 @@ Scope { // Scope
     property Component contentComponent: SidebarLeftContent {}
     property Item sidebarContent
 
+    onPinnedChanged: {
+        console.log("Pinned state changed to:", pinned)
+        if (pinned && GlobalStates.sidebarLeftOpen && sidebarLoader.item) {
+            // When pinning, ensure sidebar has focus
+            Qt.callLater(() => {
+                sidebarLoader.item.contentParent.forceActiveFocus()
+            })
+        }
+    }
+
     Component.onCompleted: {
         root.sidebarContent = contentComponent.createObject(null, {
             "scopeRoot": root,
@@ -54,11 +64,18 @@ Scope { // Scope
                 GlobalStates.sidebarLeftOpen = false
             }
 
+            onVisibleChanged: {
+                if (visible) {
+                    // When sidebar becomes visible, give it focus
+                    sidebarLeftBackground.forceActiveFocus()
+                }
+            }
+
             exclusiveZone: 0
             implicitWidth: Appearance.sizes.sidebarWidthExtended + Appearance.sizes.elevationMargin
             WlrLayershell.namespace: "quickshell:sidebarLeft"
             // Hyprland 0.49: OnDemand is Exclusive, Exclusive just breaks click-outside-to-close
-            // WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
+            WlrLayershell.keyboardFocus: root.pinned ? WlrKeyboardFocus.OnDemand : WlrKeyboardFocus.None
             color: "transparent"
 
             anchors {

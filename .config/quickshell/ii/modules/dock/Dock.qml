@@ -99,8 +99,8 @@ Scope { // Scope
                             anchors {
                                 fill: parent
                                 margins: 0
-                                topMargin: 0
-                                bottomMargin: 0  // Cambiado: era 0, ahora 2 para reducir la altura
+                                topMargin: 10
+                                bottomMargin: 0 // Cambiado: era 0, ahora 2 para reducir la altura
                             }
                             color: Qt.rgba(0, 0, 0, 0.6) // Black with 70% opacity
                             radius: 12  // Esquinas redondeadas como macOS

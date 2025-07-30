@@ -276,7 +276,7 @@ Inline w/ backslash and round brackets \\(e^{i\\pi} + 1 = 0\\)
                         color: Appearance.m3colors.m3outline
                         horizontalAlignment: Text.AlignLeft
                         wrapMode: Text.Wrap
-                        text: Translation.tr("Type /key to get started with online models\nCtrl+O to expand the sidebar\nCtrl+P to detach sidebar into a window")
+                        text: Translation.tr("Type /key to get started with online models\nCtrl+O to expand the sidebar\nCtrl+P to toggle pin/unpin sidebar")
                     }
                 }
             }

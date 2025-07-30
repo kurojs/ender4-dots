@@ -13,6 +13,7 @@ Scope { // Scope
     id: root
     property int sidebarPadding: 15
     property bool detach: false
+    property bool pinned: false
     property Component contentComponent: SidebarLeftContent {}
     property Item sidebarContent
 
@@ -73,12 +74,16 @@ Scope { // Scope
             HyprlandFocusGrab { // Click outside to close
                 id: grab
                 windows: [ sidebarRoot ]
-                active: sidebarRoot.visible
+                active: sidebarRoot.visible && !root.pinned
                 onActiveChanged: { // Focus the selected tab
                     if (active) sidebarLeftBackground.children[0].focusActiveItem()
                 }
                 onCleared: () => {
-                    if (!active) sidebarRoot.hide()
+                    console.log("Focus cleared, pinned:", root.pinned)
+                    if (!root.pinned) {
+                        console.log("Hiding sidebar")
+                        sidebarRoot.hide()
+                    }
                 }
             }
 
@@ -121,7 +126,9 @@ Scope { // Scope
                             sidebarRoot.extend = !sidebarRoot.extend;
                         }
                         else if (event.key === Qt.Key_P) {
-                            root.detach = !root.detach;
+                            console.log("Ctrl+P pressed, toggling pin state")
+                            root.pinned = !root.pinned;
+                            console.log("Sidebar pinned:", root.pinned)
                         }
                         event.accepted = true;
                     }
@@ -150,7 +157,9 @@ Scope { // Scope
                 Keys.onPressed: (event) => {
                     if (event.modifiers === Qt.ControlModifier) {
                         if (event.key === Qt.Key_P) {
-                            root.detach = !root.detach;
+                            console.log("Detached Ctrl+P pressed, toggling pin state")
+                            root.pinned = !root.pinned;
+                            console.log("Sidebar pinned:", root.pinned)
                         }
                         event.accepted = true;
                     }
@@ -203,11 +212,13 @@ Scope { // Scope
     }
 
     GlobalShortcut {
-        name: "sidebarLeftToggleDetach"
-        description: "Detach left sidebar into a window/Attach it back"
+        name: "sidebarLeftTogglePin"
+        description: "Toggle pin/unpin sidebar - when pinned, stays open when clicking outside"
 
         onPressed: {
-            root.detach = !root.detach;
+            console.log("Global pin toggle shortcut pressed, current pinned:", root.pinned)
+            root.pinned = !root.pinned;
+            console.log("New pinned state:", root.pinned)
         }
     }
 

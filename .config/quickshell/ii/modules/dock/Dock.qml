@@ -122,8 +122,8 @@ Scope { // Scope
                             GroupButton {
                                 Layout.alignment: Qt.AlignVCenter
                                 Layout.topMargin: 2
-                                baseWidth: 25  // Más pequeño y minimalista
-                                baseHeight: 25
+                                baseWidth: 20  // Más pequeño y minimalista
+                                baseHeight: 20
                                 clickedWidth: baseWidth
                                 clickedHeight: baseHeight + 15
                                 buttonRadius: Appearance.rounding.small // Radio más pequeño
@@ -135,10 +135,6 @@ Scope { // Scope
                                     horizontalAlignment: Text.AlignHCenter
                                     iconSize: 14 // Icono más pequeño, valor fijo
                                     color: root.pinned ? "#FFFFFF" : Appearance.colors.colOnLayer0
-                                }
-                                
-                                StyledToolTip {
-                                    content: "Pin dock"
                                 }
                             }
                             

@@ -155,7 +155,7 @@ ShellRoot {
             function loadImageList() {
                 console.log("Loading waifu images...")
                 imageList = [
-                    "/home/user/Desktop/"
+                "/home/kuro/Desktop/ファイル/Imagenes/example.jpg"
                 ]
                 console.log("Loaded", imageList.length, "waifu images")
                 if (imageList.length > 0) {

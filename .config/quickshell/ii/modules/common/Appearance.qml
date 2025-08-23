@@ -30,7 +30,7 @@ Singleton {
         property color raycastBackground: "#BF000000" // Fondo del AppLauncher (75% opacidad)
 
         // -- Colores específicos por sección --
-        property color leftPanelTabs: "#6957c7"         // Pestañas activas del panel izquierdo
+        property color leftPanelTabs: "#a0a0a0"         // Pestañas activas del panel izquierdo
         property color rightPanelToggles: "#725FCE"     // Toggles activos del panel derecho
         property color volumeBar: "#725FCE"             // Barra de progreso de volumen/brillo
         property color sessionButtons: "#523CC3"        // Botones del menú de sesión (apagar, etc.)

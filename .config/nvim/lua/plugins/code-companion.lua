@@ -53,7 +53,7 @@ return {
         return require("codecompanion.adapters").extend("copilot", {
           schema = {
             model = {
-              default = "gpt-4o",
+              default = "gemini-2.5-pro",
             },
           },
         })

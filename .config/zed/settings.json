@@ -8,6 +8,9 @@
   },
   "terminal": {
     "shell": "system",
+    "env": {
+      "ZED_TERMINAL": "1"
+    },
     "line_height": { "custom": 1.25 }
   },
   "project_panel": {
@@ -22,9 +25,8 @@
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
-    },
-    "version": "2"
+      "model": "claude-sonnet-4"
+    }
   },
   "vim_mode": true,
   "vim": {

@@ -7,7 +7,7 @@
       "name": "Gentleman Kanagawa Blur",
       "appearance": "dark",
       "style": {
-        //   "background.appearance": "blurred",
+        "background.appearance": "blurred",
         "border": "#E0C15A00",
         "border.variant": "#FFE06600",
         "border.focused": "#FFE066FF",
@@ -16,7 +16,7 @@
         "border.disabled": "#FFE066FF",
         "elevated_surface.background": "#15192AFF",
         "surface.background": "#191E28d0",
-        "background": "#06080fc9",
+        "background": "#06080fea",
         "element.background": "#232A40FF",
         "element.hover": "#8AD6FF4d",
         "element.active": "#FF8DD700",

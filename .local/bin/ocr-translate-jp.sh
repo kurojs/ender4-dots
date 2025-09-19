@@ -1,50 +1,50 @@
 #!/bin/bash
-# Script para OCR de japonés y traducción en Wayland
+# Script for Japanese OCR and translation on Wayland
 
-# 1. Definir archivo temporal para la captura
+# 1. Define temporary file for screenshot
 TMP_IMG="/tmp/ocr_screenshot_$(date +%s).png"
 
-# 2. Seleccionar área y tomar captura con spectacle (para KDE)
-# -n deshabilita la notificación de "guardado como..."
+# 2. Select area and take screenshot with spectacle (for KDE)
+# -n disables the "saved as..." notification
 spectacle -b -n -r -o "$TMP_IMG"
 
-# 3. Verificar que la captura se creó y no está vacía
+# 3. Verify that the screenshot was created and is not empty
 if [ ! -s "$TMP_IMG" ]; then
-    notify-send -u critical "Error de Captura" "Captura cancelada o fallida. No se creó el archivo."
-    # Limpiar por si se creó un archivo vacío
+    notify-send -u critical "Capture Error" "Capture cancelled or failed. File was not created."
+    # Clean up in case an empty file was created
     [ -f "$TMP_IMG" ] && rm "$TMP_IMG"
     exit 1
 fi
 
-# 4. Hacer OCR del texto japonés con Tesseract
+# 4. Perform OCR on Japanese text with Tesseract
 JAPANESE_TEXT=$(tesseract "$TMP_IMG" stdout -l jpn)
 
-# Verificar si el OCR extrajo texto
+# Check if OCR extracted text
 if [ -z "$JAPANESE_TEXT" ]; then
-    notify-send "Error de OCR" "No se pudo extraer texto japonés del área seleccionada."
+    notify-send "OCR Error" "Could not extract Japanese text from selected area."
     rm "$TMP_IMG"
     exit 1
 fi
 
-# 4. Traducir el texto de japonés a español con translate-shell
+# 4. Translate text from Japanese to Spanish with translate-shell
 TRANSLATED_TEXT=$(trans -b -s ja -t es "$JAPANESE_TEXT")
 
-# Verificar si la traducción funcionó
+# Check if translation worked
 if [ -z "$TRANSLATED_TEXT" ]; then
-    notify-send "Error de Traducción" "Fallo al traducir el texto. Copiando original."
-    # Si la traducción falla, igualmente copiamos el texto original
+    notify-send "Translation Error" "Failed to translate text. Copying original."
+    # If translation fails, still copy the original text
     echo -n "$JAPANESE_TEXT" | wl-copy
     rm "$TMP_IMG"
     exit 1
 fi
 
-# 5. Copiar el texto japonés original al portapapeles
+# 5. Copy original Japanese text to clipboard
 echo -n "$JAPANESE_TEXT" | wl-copy
 
-# 6. Mostrar notificación con la traducción en español
-notify-send "Traducción" "$TRANSLATED_TEXT"
+# 6. Show notification with Spanish translation
+notify-send "Translation" "$TRANSLATED_TEXT"
 
-# 7. Borrar el archivo temporal
+# 7. Delete temporary file
 rm "$TMP_IMG"
 
 exit 0

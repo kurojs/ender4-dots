@@ -59,3 +59,10 @@ keybind = alt+s=write_screen_file:paste
 
 ### tmux
 ### command = "tmux new-session -A -s main"
+keybind = shift+enter=text:\x1b\r
+
+background-image = /home/kuro/デスクトップ/ファイル/Imagenes/archlinux2.png
+background-image-position = bottom-right
+background-image-fit = none
+background-image-opacity = 0.3
+background-image-repeat = false

@@ -20,7 +20,7 @@ palette = 15=#f3f6f9
 
 background = 06080f
 foreground = f3f6f9
-cursor-color = e0c15a
+cursor-color = 4b2d5e
 selection-background = 263356
 selection-foreground = f3f6f9
 

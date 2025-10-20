@@ -1,0 +1,29 @@
+# Kuromy - Elegant Glassy Theme
+# Modern glassy dark theme with soft purple-blue tones and transparency
+
+[meta]
+version = 1
+name = "Kuromy"
+description = "Elegant glassy theme with soft purple-blue tones and transparency effect"
+variant = "dark"
+
+[colors.core]
+background = "#0a0b14"           # Deep blue-black with subtle presence
+foreground = "#d4d4dc"           # Soft white-gray text
+secondary_background = "#14152a" # Soft purple-blue, more visible
+border = "#252847"               # Visible but gentle purple-blue border
+accent = "#6b5f8a"               # Soft purple with presence
+
+[colors.accents]
+blue = "#6ba5d9"    # Soft blue
+green = "#1ad986"   # green
+magenta = "#b89ac4" # Soft lavender magenta
+orange = "#e09060"  # Muted warm orange
+purple = "#8672a8"  # Soft purple with character
+red = "#7d0101"     # red
+yellow = "#e8db73"  # Muted warm yellow
+cyan = "#6fd4e0"    # Soft cyan
+
+[colors.list.item.selection]
+background = "#1d1e38"           # Soft purple-blue selection, visible
+secondary_background = "#28294a" # Highlighted with gentle purple tone

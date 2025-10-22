@@ -13,11 +13,11 @@ return {
     -- URL: https://github.com/yetone/avante.nvim
     -- Description: Este plugin ofrece una serie de mejoras y herramientas para optimizar la edición de texto en Neovim.
     "yetone/avante.nvim",
-    enabled = false,
+    enabled = true,
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    enabled = false,
+    enabled = true,
   },
   {
     "sudo-tee/opencode.nvim",
@@ -36,6 +36,6 @@ return {
     -- URL: https://github.com/greggh/claude-code.nvim
     -- Description: Neovim integration for Claude Code AI assistant
     "greggh/claude-code.nvim",
-    enabled = true,
+    enabled = false,
   },
 }

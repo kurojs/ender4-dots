@@ -3,88 +3,89 @@
 -- Define prompts for Copilot
 -- This table contains various prompts that can be used to interact with Copilot.
 local prompts = {
-  Explain = "Por favor explica cómo funciona el siguiente código.",
-  Review = "Por favor revisa el siguiente código y proporciona sugerencias para mejorarlo.",
-  Tests = "Por favor explica cómo funciona el código seleccionado y luego genera pruebas unitarias para él.",
-  Refactor = "Por favor refactoriza el siguiente código para mejorar su claridad y legibilidad.",
-  FixCode = "Por favor corrige el siguiente código para que funcione como se pretende.",
-  FixError = "Por favor explica el error en el siguiente texto y proporciona una solución.",
-  BetterNamings = "Por favor sugiere mejores nombres para las siguientes variables y funciones.",
-  Documentation = "Por favor genera documentación para el siguiente código.",
-  JsDocs = "Por favor genera JsDocs para el siguiente código.",
-  DocumentationForGithub = "Por favor genera documentación para el siguiente código lista para GitHub usando markdown.",
-  CreateAPost = "Por favor genera documentación para el siguiente código para publicarlo en redes sociales como LinkedIn; debe ser profunda, bien explicada y fácil de entender. Hazlo de manera divertida y atractiva.",
-  SwaggerApiDocs = "Por favor genera la documentación de la siguiente API usando Swagger.",
-  SwaggerJsDocs = "Por favor escribe JsDoc para la siguiente API usando Swagger.",
-  Summarize = "Por favor resume el siguiente texto.",
-  Spelling = "Por favor corrige cualquier error gramatical y ortográfico en el siguiente texto.",
-  Wording = "Por favor mejora la gramática y redacción del siguiente texto.",
-  Concise = "Por favor reescribe el siguiente texto para que sea más conciso.",
-
+  Explain = "Please explain how the following code works.", -- Prompt to explain code
+  Review = "Please review the following code and provide suggestions for improvement.", -- Prompt to review code
+  Tests = "Please explain how the selected code works, then generate unit tests for it.", -- Prompt to generate unit tests
+  Refactor = "Please refactor the following code to improve its clarity and readability.", -- Prompt to refactor code
+  FixCode = "Please fix the following code to make it work as intended.", -- Prompt to fix code
+  FixError = "Please explain the error in the following text and provide a solution.", -- Prompt to fix errors
+  BetterNamings = "Please provide better names for the following variables and functions.", -- Prompt to suggest better names
+  Documentation = "Please provide documentation for the following code.", -- Prompt to generate documentation
+  JsDocs = "Please provide JsDocs for the following code.", -- Prompt to generate JsDocs
+  DocumentationForGithub = "Please provide documentation for the following code ready for GitHub using markdown.", -- Prompt to generate GitHub documentation
+  CreateAPost = "Please provide documentation for the following code to post it in social media, like Linkedin, it has be deep, well explained and easy to understand. Also do it in a fun and engaging way.", -- Prompt to create a social media post
+  SwaggerApiDocs = "Please provide documentation for the following API using Swagger.", -- Prompt to generate Swagger API docs
+  SwaggerJsDocs = "Please write JSDoc for the following API using Swagger.", -- Prompt to generate Swagger JsDocs
+  Summarize = "Please summarize the following text.", -- Prompt to summarize text
+  Spelling = "Please correct any grammar and spelling errors in the following text.", -- Prompt to correct spelling and grammar
+  Wording = "Please improve the grammar and wording of the following text.", -- Prompt to improve wording
+  Concise = "Please rewrite the following text to make it more concise.", -- Prompt to make text concise
   KataCoach = [[
-Estás por ayudar a una persona a resolver un problema de Codewars (kata). Esta persona no sabe nada de programación, así que tu tarea es actuar como un mentor técnico muy paciente, claro y detallista.
+    Estás por ayudar a una persona a resolver un problema de Codewars (kata). Esta persona no sabe nada de programación, así que tu tarea es actuar como un mentor técnico muy paciente, claro y detallista.
 
-1. **Explicá primero el enunciado del problema** en tus propias palabras, para asegurarte de que se entienda qué se pide.
+    1. **Explicá primero el enunciado del problema** en tus propias palabras, para asegurarte de que se entienda qué se pide.
 
-2. **Explicá el contexto general del lenguaje y conceptos necesarios** para resolver el problema. Si se requiere un `map`, `reduce`, `mod`, estructuras de control, etc., explicalos brevemente con ejemplos sencillos.
+    2. **Explicá el contexto general del lenguaje y conceptos necesarios** para resolver el problema. Si se requiere un `map`, `reduce`, `mod`, estructuras de control, etc., explicalos brevemente con ejemplos sencillos.
 
-3. **No des la solución directamente.** Tu objetivo es que la persona pueda resolverlo por su cuenta. En vez de resolverlo, enseñá:
-   - Cómo pensarlo paso a paso.
-   - Qué técnicas podría aplicar.
-   - Cómo escribir código que lo resuelva, explicando en código y ejemplos si hace falta.
-   - Mostrá ejemplos parciales que ilustren cómo avanzar, sin mostrar la solución completa.
-   - Mantené el enfoque pedagógico, como si fueras su mentor personal.
+    3. **No des la solución directamente.** Tu objetivo es que la persona pueda resolverlo por su cuenta. En vez de resolverlo, enseñá:
+    - Cómo pensarlo paso a paso.
+    - Qué técnicas podría aplicar.
+    - Cómo escribir código que lo resuelva, explicando en código y ejemplos si hace falta.
+    - Mostrá ejemplos parciales que ilustren cómo avanzar, sin mostrar la solución completa.
+    - Mantené el enfoque pedagógico, como si fueras su mentor personal.
 
-4. **Si la persona te pide explícitamente “dame la solución”** o “resolveme el kata”, entonces:
-   - Primero mostrale el **código limpio sin comentarios de la solución** para que pueda copiarlo directo.
-   - Luego explicá **paso por paso cada línea del código**, incluyendo variables, operaciones, estructuras, etc.
-   - Usá ejemplos si es necesario para ilustrar cómo se ejecuta el código.
+    4. **Si la persona te pide explícitamente “dame la solución”** o “resolveme el kata”, entonces:
+    - Primero mostrale el **código limpio sin comentarios de la solución** para que pueda copiarlo directo.
+    - Luego explicá **paso por paso cada línea del código**, incluyendo variables, operaciones, estructuras, etc.
+    - Usá ejemplos si es necesario para ilustrar cómo se ejecuta el código.
 
-5. **Si te pide generar el commit del día con los ejercicios hechos (1 o más):**
-   - Armá un mensaje del commit en ingles con esta estructura:
-     ```
-     feat(katas): add <número> new katas in <lenguajes usados> (<niveles de dificultad>)
-     - <Lenguaje y nivel>: <Nombre del kata> - <Descripción corta de qué hace>.
-     - <Lenguaje y nivel>: <Nombre del kata> - <Descripción corta>.
-     ```
-   - Adaptá el número de katas y el contenido según lo que se haya hecho.
+    5. **Si te pide generar el commit del día con los ejercicios hechos (1 o más):**
+    - Armá un mensaje del commit en ingles con esta estructura:
+    ```
+    feat(katas): add <número> new katas in <lenguajes usados> (<niveles de dificultad>)
+    - <Lenguaje y nivel>: <Nombre del kata> - <Descripción corta de qué hace>.
+    - <Lenguaje y nivel>: <Nombre del kata> - <Descripción corta>.
+    ```
+    - Adaptá el número de katas y el contenido según lo que se haya hecho.
 
-6. **Si te pide el Daily Log de hoy:**
-   - Generá un archivo Markdown con esta estructura:
+    6. **Si te pide el Daily Log de hoy:**
+    - Generá un archivo Markdown con esta estructura:
 
-     ```
-     # Daily Log - [FECHA]
+    ```
+    # Daily Log - [FECHA]
 
-     **Resumen:**  
-     Hoy trabajamos con katas en <lenguajes usados>, en niveles <niveles de dificultad>.  
-     Nos enfocamos en <temas tratados>.  
-     Además, repasamos <conceptos clave>.
+    **Resumen:**
+    Hoy trabajamos con katas en <lenguajes usados>, en niveles <niveles de dificultad>.
+    Nos enfocamos en <temas tratados>.
+    Además, repasamos <conceptos clave>.
 
-     ---
+    ---
 
-     **Tareas y Aprendizajes:**
+    **Tareas y Aprendizajes:**
 
-     1. **<Lenguaje> – <Nombre del kata> (<kyu>)**  
-        - <Qué hacía el ejercicio>.  
-        - <Qué aprendimos al resolverlo>.
+    1. **<Lenguaje> – <Nombre del kata> (<kyu>)**
+    - <Qué hacía el ejercicio>.
+    - <Qué aprendimos al resolverlo>.
 
-     2. ...
+    2. ...
 
-     ---
+    ---
 
-     **Reflexión:**  
-     Breve balance del día: lo que costó, lo que mejoró, lo que aprendimos y cómo nos sentimos al resolver los problemas.
+    **Reflexión:**
+    Breve balance del día: lo que costó, lo que mejoró, lo que aprendimos y cómo nos sentimos al resolver los problemas.
 
-     ---
+    ---
 
-     ¡Listos para seguir aprendiendo y enfrentarnos a nuevos retos mañana! 🚀 (esto es de ejemplo)
-     ```
+    ¡Listos para seguir aprendiendo y enfrentarnos a nuevos retos mañana! 🚀 (esto es de ejemplo)
+    ```
 
-7. **Usá un tono técnico pero amigable**, con explicaciones accesibles y un toque de humor si da el contexto. Evitá jergas complejas innecesarias. Usá analogías cuando aplique.
+    7. **Usá un tono técnico pero amigable**, con explicaciones accesibles y un toque de humor si da el contexto. Evitá jergas complejas innecesarias. Usá analogías cuando aplique.
 
-Tu objetivo principal es que la persona entienda el problema, gane herramientas para resolverlo por sí misma y se divierta aprendiendo a programar.
-]],
+    Tu objetivo principal es que la persona entienda el problema, gane herramientas para resolverlo por sí misma y se divierta aprendiendo a programar.
+  ]],
 }
+
+
 
 -- Plugin configuration
 -- This table contains the configuration for various plugins used in Neovim.
@@ -158,17 +159,17 @@ return {
       },
     },
     config = function(_, opts)
-    local chat = require("CopilotChat")
+      local chat = require("CopilotChat")
 
-    vim.api.nvim_create_autocmd("BufEnter", {
-      pattern = "copilot-chat",
-      callback = function()
-      vim.opt_local.relativenumber = true
-      vim.opt_local.number = false
-      end,
-    })
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = "copilot-chat",
+        callback = function()
+          vim.opt_local.relativenumber = true
+          vim.opt_local.number = false
+        end,
+      })
 
-    chat.setup(opts)
+      chat.setup(opts)
     end,
   },
   -- Blink integration
@@ -183,7 +184,7 @@ return {
           path = {
             -- Path sources triggered by "/" interfere with CopilotChat commands
             enabled = function()
-            return vim.bo.filetype ~= "copilot-chat"
+              return vim.bo.filetype ~= "copilot-chat"
             end,
           },
         },

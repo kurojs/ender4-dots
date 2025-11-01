@@ -7,6 +7,7 @@ wmclassmatch=1
 
 [3e7d0e7a-efb9-44f6-8e08-a0755572a2f5]
 Description=Window settings for Spotify
+Enabled=false
 clientmachine=localhost
 noborder=true
 noborderrule=2
@@ -18,8 +19,27 @@ wmclass=spotify Spotify
 wmclasscomplete=true
 wmclassmatch=1
 
+[40213232-9a63-48ec-9947-dfcee70300d8]
+Description=Settings for keyviz
+above=true
+aboverule=2
+desktops=dc481913-8758-4ec8-a665-65b81bc4b969
+desktopsrule=2
+noborder=true
+noborderrule=2
+position=1400,700
+positionrule=2
+size=520,400
+sizerule=2
+skiptaskbar=true
+skiptaskbarrule=2
+wmclass=keyviz
+wmclasscomplete=true
+wmclassmatch=1
+
 [412c3c26-1a6b-40bb-8e5c-643ae7ec17b6]
 Description=Window settings for Picture-in-Picture
+Enabled=false
 above=true
 aboverule=2
 desktops=\\0
@@ -38,6 +58,7 @@ wmclassmatch=1
 
 [721642af-aebe-4ed1-a950-f1167151b8a6]
 Description=Window settings for net.mkiol.SpeechNote
+Enabled=false
 minimize=true
 minimizerule=2
 skiptaskbar=true
@@ -74,7 +95,7 @@ wmclassmatch=1
 Description=Window settings for org.nickvision.cavalier
 below=true
 belowrule=2
-position=0,800
+position=0,810
 positionrule=2
 size=1920,200
 sizerule=2
@@ -86,10 +107,11 @@ wmclassmatch=1
 
 [General]
 count=11
-rules=412c3c26-1a6b-40bb-8e5c-643ae7ec17b6,721642af-aebe-4ed1-a950-f1167151b8a6,7feddda8-509f-49b7-93a1-5b1d47bf7f05,fcaa6f70-b481-4819-9fe3-eb7f8faae89d,86e7ccd8-4ad7-4558-b037-af34be38bff9,71c718ff-ecd7-467e-ba58-9caa7613e4fa,3e7d0e7a-efb9-44f6-8e08-a0755572a2f5,b5726e06-8695-408a-9ba4-5fdc76e097f4,56b2e29a-7da6-4a48-9365-26281f3a9d2c,2e65e526-6d64-4578-b920-43a7ead288c0,749c8dd0-092f-4233-b13f-682b08a4c57a
+rules=412c3c26-1a6b-40bb-8e5c-643ae7ec17b6,721642af-aebe-4ed1-a950-f1167151b8a6,7feddda8-509f-49b7-93a1-5b1d47bf7f05,fcaa6f70-b481-4819-9fe3-eb7f8faae89d,86e7ccd8-4ad7-4558-b037-af34be38bff9,3e7d0e7a-efb9-44f6-8e08-a0755572a2f5,b5726e06-8695-408a-9ba4-5fdc76e097f4,56b2e29a-7da6-4a48-9365-26281f3a9d2c,2e65e526-6d64-4578-b920-43a7ead288c0,749c8dd0-092f-4233-b13f-682b08a4c57a,40213232-9a63-48ec-9947-dfcee70300d8
 
 [b5726e06-8695-408a-9ba4-5fdc76e097f4]
 Description=Window settings for whatsdesk
+Enabled=false
 clientmachine=localhost
 noborder=true
 noborderrule=2

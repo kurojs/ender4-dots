@@ -161,3 +161,39 @@ function SaveFile()
     vim.notify("Error: " .. err, vim.log.levels.ERROR) -- Show the error message if it fails
   end
 end
+
+-- TTS: Leer texto seleccionado con speech_wrapper
+vim.keymap.set('v', '<leader>s', function()
+  -- Copiar selección al registro z
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg('z')
+  
+  -- Limpiar formato básico
+  text = text:gsub('```.-```', ' ') -- Bloques de código
+  text = text:gsub('`[^`]+`', ' ') -- Código inline
+  text = text:gsub('[#*_~]', '') -- Markdown
+  text = text:gsub('%[(.-)%]%(.-%)', '%1') -- Links
+  text = text:gsub('[{}%[%]()<>|/\\]', ' ') -- Símbolos
+  text = text:gsub('[🔊🔇📋🚀⚙️✅❌⚠️→←↑↓✓✗]', ' ') -- Emojis
+  text = text:gsub('%s+', ' ') -- Espacios múltiples
+  text = vim.trim(text)
+  
+  if text == '' or #text < 5 then
+    vim.notify('No hay texto para leer', vim.log.levels.WARN)
+    return
+  end
+  
+  -- Escapar comillas para bash
+  text = text:gsub('"', '\\"')
+  
+  -- Llamar al wrapper
+  vim.fn.system('/home/kuro/.local/bin/speech_wrapper.sh "' .. text .. '" &')
+  vim.notify('🔊 Leyendo selección...', vim.log.levels.INFO)
+end, { desc = 'TTS: Leer selección' })
+
+-- TTS: Detener reproducción
+vim.keymap.set('n', '<leader>tss', function()
+  vim.fn.system('pkill -f speech_wrapper.sh')
+  vim.fn.system('pkill -f SpeechNote')
+  vim.notify('🔇 TTS detenido', vim.log.levels.INFO)
+end, { desc = 'TTS: Detener' })

@@ -2,6 +2,8 @@ background-opacity = 0.79
 background-blur-radius = 20
 window-decoration = client
 
+window-theme = ghostty
+
 palette = 1=#cb7c94
 palette = 2=#b7cc85
 palette = 3=#ffe066
@@ -61,7 +63,7 @@ keybind = alt+s=write_screen_file:paste
 ### command = "tmux new-session -A -s main"
 keybind = shift+enter=text:\x1b\r
 
-background-image = /home/kuro/デスクトップ/ファイル/Imagenes/archlinux2.png
+background-image = /home/kuro/Desktop/ファイル/画像/gastly.png
 background-image-position = bottom-right
 background-image-fit = none
 background-image-opacity = 0.3

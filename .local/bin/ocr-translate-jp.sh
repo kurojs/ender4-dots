@@ -17,7 +17,8 @@ if [ ! -s "$TMP_IMG" ]; then
 fi
 
 # 4. Perform OCR on Japanese text with Tesseract
-JAPANESE_TEXT=$(tesseract "$TMP_IMG" stdout -l jpn)
+# Using PSM 6 for uniform block of text and removing extra spaces
+JAPANESE_TEXT=$(tesseract "$TMP_IMG" stdout -l jpn --psm 6 | sed 's/ //g')
 
 # Check if OCR extracted text
 if [ -z "$JAPANESE_TEXT" ]; then

@@ -108,8 +108,27 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [General]
-count=11
-rules=412c3c26-1a6b-40bb-8e5c-643ae7ec17b6,721642af-aebe-4ed1-a950-f1167151b8a6,7feddda8-509f-49b7-93a1-5b1d47bf7f05,fcaa6f70-b481-4819-9fe3-eb7f8faae89d,86e7ccd8-4ad7-4558-b037-af34be38bff9,3e7d0e7a-efb9-44f6-8e08-a0755572a2f5,b5726e06-8695-408a-9ba4-5fdc76e097f4,56b2e29a-7da6-4a48-9365-26281f3a9d2c,2e65e526-6d64-4578-b920-43a7ead288c0,749c8dd0-092f-4233-b13f-682b08a4c57a,40213232-9a63-48ec-9947-dfcee70300d8
+count=12
+rules=412c3c26-1a6b-40bb-8e5c-643ae7ec17b6,721642af-aebe-4ed1-a950-f1167151b8a6,7feddda8-509f-49b7-93a1-5b1d47bf7f05,fcaa6f70-b481-4819-9fe3-eb7f8faae89d,86e7ccd8-4ad7-4558-b037-af34be38bff9,3e7d0e7a-efb9-44f6-8e08-a0755572a2f5,b5726e06-8695-408a-9ba4-5fdc76e097f4,56b2e29a-7da6-4a48-9365-26281f3a9d2c,2e65e526-6d64-4578-b920-43a7ead288c0,749c8dd0-092f-4233-b13f-682b08a4c57a,40213232-9a63-48ec-9947-dfcee70300d8,2121665b-e16c-47bb-9a0c-2af4f4ebd7af
+
+[2121665b-e16c-47bb-9a0c-2af4f4ebd7af]
+Description=Open-LLM-VTuber Window
+above=true
+aboverule=2
+desktops=\\0
+desktopsrule=2
+ignoregeometry=true
+ignoregeometryrule=2
+maxsize=500,650
+maxsizerule=2
+minsize=500,650
+minsizerule=2
+noborder=true
+noborderrule=2
+size=500,650
+sizerule=2
+wmclass=open-llm-vtuber
+wmclassmatch=1
 
 [b5726e06-8695-408a-9ba4-5fdc76e097f4]
 Description=Window settings for whatsdesk

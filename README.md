@@ -344,6 +344,8 @@ The [windows branch](https://github.com/kurojs/ender4-dots/tree/windows) contain
 - [Ghostty](https://github.com/ghostty-org/ghostty) - Modern terminal emulator
 - [Fish](https://fishshell.com/) - Smart command line shell
 - AI Providers: Claude, OpenAI, Google Gemini, Ollama
+- [Open-LLM-VTuber](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber) - Voice-interactive AI VTuber companion with Live2D support (York's engine)
+- [Deadbeat VTuber Model](https://jawlipops.gumroad.com/l/XBsYK) by jawli - Live2D model that gives York her expressiveness and personality
 - Arch Linux community and all open source contributors
 
 ---

@@ -9,6 +9,10 @@ Personal Windows dotfiles. This branch contains configuration for the Windows de
 ![Neovim](https://i.imgur.com/APgbrPl.png)
 ![Windows Terminal](https://i.imgur.com/gR7DBLp.png)
 
+<sub>AI Chat panel — work in progress</sub>
+
+![AI Chat panel](https://i.imgur.com/VAHQQAz.png)
+
 ---
 
 ## Contents

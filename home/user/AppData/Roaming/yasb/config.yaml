@@ -441,10 +441,10 @@ widgets:
         offset_left: 0
         offset_top: 6
       icons:
-        attach: "\uf067"
+        attach: "\uf0c6"
         send: "\uf1d8"
         stop: "\uf04d"
-        clear: "\uf1f8"
+        clear: "\udb81\udf3a"
         assistant: "\udb81\ude74"
         float_on: "\udb84\udcac"
         float_off: "\udb84\udca9"
@@ -454,6 +454,9 @@ widgets:
       start_floating: false
       callbacks:
         on_left: "toggle_chat"
+      keybindings:
+        - keys: "alt+a"
+          action: "toggle_chat"
       providers:
         - provider: "GitHub Copilot"
           provider_type: "copilot"

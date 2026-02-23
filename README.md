@@ -100,6 +100,18 @@ spicetify apply
 
 ---
 
+### Tacky Borders — `home/user/.config/tacky-borders/`
+
+Window border highlighting via [tacky-borders](https://github.com/lukeyou05/tacky-borders).
+
+- Active window: animated purple → violet → green gradient border (`ReverseSpiral` + `Fade`)
+- Inactive windows: no border (transparent)
+- Auto-reloads on config change (`watch_config_changes: true`)
+
+**Install location:** `%USERPROFILE%\.config\tacky-borders\`
+
+---
+
 ### YASB — `home/user/AppData/Roaming/yasb/`
 
 Status bar configuration for [YASB](https://github.com/amnweb/yasb) using the Fluent Onyx v2 theme.
@@ -160,6 +172,8 @@ AutoHotkey v2 scripts for Windows keybindings.
 ```
 .config/
   nvim-windows/          Neovim config (Windows)
+  tacky-borders/
+    config.yaml          Tacky Borders window border config
 home/user/
   AppData/
     Local/

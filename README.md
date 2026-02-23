@@ -61,7 +61,7 @@ Ender4.Dots is a comprehensive collection of dotfiles featuring a modern Hyprlan
 
 ### AI-Powered Workflow
 - **Multiple AI Providers**: Claude, OpenAI, Gemini, Ollama integration
-- **Voice Control**: Real-time voice synthesis and command execution
+- **Voice Control**: Real-time voice synthesis and command execution via [elevenlabs-mcp-tts](https://github.com/kurojs/elevenlabs-mcp-tts) — ElevenLabs TTS integration for OpenCode
 - **Intelligent Code Editing**: Advanced AI assistance in Neovim
 - **Smart Translation**: Built-in translation with multiple backends
 

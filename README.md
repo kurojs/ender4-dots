@@ -104,10 +104,11 @@ Bar layout:
 
 | Left | Center | Right |
 |------|--------|-------|
-| Virtual desktops, Media player, Cava visualizer | — | CPU usage, GPU temperature, App launchers |
+| AI Chat, Virtual desktops, Media player, Cava visualizer | — | CPU usage, GPU temperature, App launchers |
 
 Widgets configured (not all active by default):
 
+- `ai_chat` — AI chat popup supporting multiple providers; configured with GitHub Copilot and Gemini 2.5 Flash (via OpenAI-compatible Google AI Studio endpoint)
 - `windows_workspaces` — virtual desktop switcher
 - `media` — current playing track with popup media menu
 - `cava` — audio visualizer (mirrored bars, purple gradient)

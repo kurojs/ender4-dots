@@ -33,6 +33,7 @@ bars:
     widgets:
       left:
         [
+          "ai_chat",
           "windows_workspaces",
           "media",
           "cava"
@@ -425,3 +426,43 @@ widgets:
           restart: ["\uead2", "Restart"]
           hibernate: ["\uf28e", "Hibernate"]
           cancel: ["\udb81\udf3a", "Cancel"]
+
+  ai_chat:
+    type: "yasb.ai_chat.AiChatWidget"
+    options:
+      label: "<span>\udb81\ude74</span>"
+      chat:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_left: 0
+        offset_top: 6
+      icons:
+        attach: "\uf067"
+        send: "\uf1d8"
+        stop: "\uf04d"
+        clear: "\uf1f8"
+        assistant: "\udb81\ude74"
+        float_on: "\udb84\udcac"
+        float_off: "\udb84\udca9"
+        close: "\uf00d"
+        copy: "\uebcc"
+        copy_check: "\uf00c"
+      start_floating: false
+      callbacks:
+        on_left: "toggle_chat"
+      providers:
+        - provider: "GitHub Copilot"
+          provider_type: "copilot"
+          copilot_cli_url: "http://localhost:4321"
+        - provider: "Gemini"
+          api_endpoint: "https://generativelanguage.googleapis.com/v1beta/openai"
+          credential: "GOOGLE_AI_STUDIO_API_KEY"
+          models:
+            - name: "models/gemini-2.5-flash"
+              label: "Gemini 2.5 Flash"
+              default: true
+              max_tokens: 8192

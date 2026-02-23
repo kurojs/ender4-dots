@@ -73,6 +73,12 @@ Extensions used:
 | DeepL Translate | Translate selected text via DeepL API | [community plugins](https://github.com/nvs-abhilash/Flow.Launcher.Plugin.DeepLTranslate) |
 | GIF Search | Search and copy GIFs via Tenor | [community plugins](https://github.com/riojano0/flowlauncher-gif-finder) |
 
+#### Open-LLM-VTuber
+
+[Open-LLM-VTuber](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber) by Open-LLM-VTuber contributors. Voice-interactive AI VTuber companion with a Live2D avatar that runs entirely locally. Supports all major LLMs, TTS, and ASR backends. Used here as York — an always-on AI companion that floats over the desktop with a Live2D avatar, responds to voice, and provides conversational AI assistance.
+
+The Live2D model used for York is the [Deadbeat VTuber Model (Free)](https://jawlipops.gumroad.com/l/XBsYK) by [jawli](https://jawlipops.gumroad.com/), which gives York her expressiveness and personality.
+
 #### Spicetify
 
 [Spicetify](https://spicetify.app/) by spicetify. CLI tool to customize the Spotify desktop client — themes, extensions, and custom apps injected directly into the client.
@@ -164,3 +170,15 @@ home/user/
     autohotkey-scripts/
       quake.ahk          AutoHotkey v2 keybindings
 ```
+
+---
+
+## Acknowledgments
+
+- [Open-LLM-VTuber](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber) - Voice-interactive AI VTuber companion with Live2D support (York's engine)
+- [Deadbeat VTuber Model](https://jawlipops.gumroad.com/l/XBsYK) by jawli - Live2D model that gives York her expressiveness and personality
+- [LazyVim](https://github.com/LazyVim/LazyVim) - Neovim configuration framework
+- [YASB](https://github.com/amnweb/yasb) - Windows status bar
+- [Flow Launcher](https://www.flowlauncher.com/) - Application launcher
+- [Spicetify](https://spicetify.app/) - Spotify client customization
+- [AutoHotkey](https://www.autohotkey.com/) - Windows automation scripting

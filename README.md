@@ -36,6 +36,8 @@ npm install -g tree-sitter-cli
 
 ### Windows Terminal Preview — `home/user/AppData/Local/Microsoft/Windows Terminal Preview/`
 
+[Windows Terminal Preview](https://github.com/microsoft/terminal) by Microsoft. The Preview build receives features earlier than the stable release.
+
 Terminal configuration with:
 
 - Font: IosevkaTerm Nerd Font, size 16
@@ -43,7 +45,48 @@ Terminal configuration with:
 - Acrylic background with 90% opacity
 - Default profile: Windows PowerShell
 
+**Quake mode:** Press `Win+`` to toggle a drop-down terminal that slides from the top of the screen. Mapped to `Alt+Z` via AutoHotkey (see below).
+
 **Install location:** `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json`
+
+---
+
+### Float Tools
+
+Tools used as floating overlays or quick-access utilities on top of the desktop.
+
+#### Windows Terminal Preview — Quake Mode
+
+Windows Terminal Preview includes a built-in quake/drop-down mode. Press `Win+`` (or `Alt+Z` via AutoHotkey) to toggle a terminal that slides down from the top of the screen, stays on top of all windows, and hides when dismissed. No third-party software required.
+
+#### Flow Launcher
+
+[Flow Launcher](https://www.flowlauncher.com/) by jjw24 and contributors. Application launcher and search utility for Windows, similar to Raycast on macOS. Supports plugins, custom themes, and hotkey activation.
+
+Extensions used:
+
+| Plugin | Description | Source |
+|--------|-------------|--------|
+| Everything | Fast file search via Everything engine | [community plugins](https://github.com/Flow-Launcher/Flow.Launcher.Plugin.Everything) |
+| TodoList | Quick task capture and management | [community plugins](https://github.com/Flow-Launcher/Flow.Launcher.Community.Plugin.TodoList) |
+| Google Search | Open Google searches instantly | built-in |
+| DeepL Translate | Translate selected text via DeepL API | [community plugins](https://github.com/nvs-abhilash/Flow.Launcher.Plugin.DeepLTranslate) |
+| GIF Search | Search and copy GIFs via Tenor | [community plugins](https://github.com/riojano0/flowlauncher-gif-finder) |
+
+#### Spicetify
+
+[Spicetify](https://spicetify.app/) by spicetify. CLI tool to customize the Spotify desktop client — themes, extensions, and custom apps injected directly into the client.
+
+```powershell
+winget install Spicetify.Spicetify
+```
+
+After install, apply a theme and restart Spotify:
+
+```powershell
+spicetify config current_theme <theme-name>
+spicetify apply
+```
 
 ---
 

@@ -7,11 +7,22 @@
 [![QuickShell](https://img.shields.io/badge/QuickShell-6e40c9?logo=qt&logoColor=white)](https://quickshell.org/)
 [![Fish](https://img.shields.io/badge/Fish-6e40c9?logo=fish&logoColor=white)](https://fishshell.com/)
 [![Ghostty](https://img.shields.io/badge/ghostty-6e40c9)](https://github.com/ghostty-org/ghostty)
+[![Windows](https://img.shields.io/badge/Windows_branch-6e40c9?logo=windows11&logoColor=white)](https://github.com/kurojs/ender4-dots/tree/windows)
+[![YASB](https://img.shields.io/badge/YASB-6e40c9)](https://github.com/amnweb/yasb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-6e40c9)](https://opensource.org/licenses/MIT)
 
 > Ender4.Dots – Complete AI-Enhanced Desktop Environment for Arch Linux
 
 Ender4.Dots is a comprehensive collection of dotfiles featuring a modern Hyprland-based desktop environment with integrated AI capabilities and advanced KDE window management. Built for advanced users who demand productivity, customization, and cutting-edge technology in their daily workflow. From intelligent code editing with multiple AI providers to voice-controlled music playback, this configuration brings together automation, multimedia control, and smart scripting in a unified, highly optimized environment.
+
+---
+
+## Showcase
+
+![Desktop overview](https://i.imgur.com/v0UR6EQ.png)
+![QuickShell widgets](https://i.imgur.com/4WTa3pp.png)
+![Neovim](https://i.imgur.com/xZMlCHv.png)
+![Terminal](https://i.imgur.com/vtARRSL.png)
 
 ---
 
@@ -308,6 +319,19 @@ Ender4.Dots includes comprehensive AI integration across multiple components. Se
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+---
+
+## Windows Branch
+
+The [windows branch](https://github.com/kurojs/ender4-dots/tree/windows) contains the full Windows 11 dotfiles for this same setup, adapted for Windows. It includes:
+
+- Neovim with Windows-specific adaptations (Node.js detection, no tmux, no Obsidian)
+- YASB status bar with Fluent Onyx v2 theme
+- Windows Terminal Preview configuration
+- AutoHotkey v2 scripts for virtual desktop navigation and keybindings
+- Spicetify for Spotify customization
+- Flow Launcher with plugins (search, tasks, DeepL, GIF search)
 
 ---
 

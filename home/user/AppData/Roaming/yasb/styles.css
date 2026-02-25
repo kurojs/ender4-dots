@@ -100,14 +100,14 @@
    Layout - Taskbar Base
    ---------------------------------------------------------------------------- */
 .yasb-bar {
-	padding: 0 var(--space-4);
+	padding: 0;
 	margin: 0;
 	background-color: var(--color-background-base);
 	border-bottom: 1px solid var(--color-stroke-control-default);
 }
 
 .widget {
-	padding: 0 var(--space-4);
+	padding: 0 var(--space-2);
 	margin: 0;
 }
 
@@ -329,24 +329,29 @@
 /* ----------------------------------------------------------------------------
    Windows Desktops (Virtual Desktops)
    ---------------------------------------------------------------------------- */
+.windows-desktops .widget-container {
+	border: none;
+	border-radius: 0;
+}
+
 .windows-desktops .ws-btn {
-	color: var(--color-text-tertiary);
+	color: rgba(255, 255, 255, 0.3);
 	background-color: transparent;
 	border: none;
-	font-size: var(--font-size-body-strong);
-	padding: var(--space-2) var(--space-4);
-	margin: -2 0 0 0;
-	border-radius: var(--radius-small);
+	font-size: 16px;
+	padding: 0 var(--space-4);
+	margin: 0 2px;
+	border-radius: 0;
 	min-width: 20px;
 }
 
 .windows-desktops .ws-btn:hover {
-	color: var(--color-text-secondary);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .windows-desktops .ws-btn.active {
 	color: #1db954;
-	font-weight: var(--font-weight-semibold);
+	font-size: 20px;
 }
 
 .windows-desktops .context-menu {
@@ -461,6 +466,16 @@
 /* ----------------------------------------------------------------------------
    Media Widget
    ---------------------------------------------------------------------------- */
+.media-widget .widget-container {
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+}
+
+.media-widget .label {
+	font-size: 20px;
+}
+
 .media-widget .btn {
 	font-size: 18px;
 	color: var(--color-text-secondary);
@@ -1428,4 +1443,74 @@
 	background-color: transparent;
 	border: none;
 	color: rgba(220, 223, 228, 0.35);
+}
+
+/* ----------------------------------------------------------------------------
+   Matrix Widget
+   ---------------------------------------------------------------------------- */
+.matrix-widget .widget-container {
+	background-color: transparent;
+	border: none;
+	padding: 0 var(--space-4);
+}
+
+.matrix-widget .label {
+	font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NFP", monospace;
+	font-size: 13px;
+	letter-spacing: 2px;
+	color: #9b59d0;
+}
+
+/* ----------------------------------------------------------------------------
+   Copilot Widget
+   ---------------------------------------------------------------------------- */
+.copilot-widget .widget-container {
+	background-color: transparent;
+	border: none;
+	padding: 0 var(--space-4);
+}
+
+.copilot-widget .label {
+	font-family: var(--font-text);
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+}
+
+.copilot-widget .label.warning {
+	color: var(--color-warning);
+}
+
+.copilot-widget .label.critical {
+	color: var(--color-error);
+}
+
+/* ----------------------------------------------------------------------------
+   Heart Widget
+   ---------------------------------------------------------------------------- */
+.heart-widget .widget-container {
+	background-color: transparent;
+	border: none;
+	padding: 0 var(--space-4);
+}
+
+.heart-widget .label {
+	min-width: 20px;
+	min-height: 20px;
+}
+
+/* ----------------------------------------------------------------------------
+   JP Date Widget
+   ---------------------------------------------------------------------------- */
+.jp-date-widget .widget-container {
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+}
+
+.jp-date-widget .label {
+	font-family: "Noto Sans JP";
+	font-size: 18px;
+	color: var(--color-text-secondary);
+	padding: 0 var(--space-8);
+	letter-spacing: 0.02em;
 }

@@ -10,19 +10,22 @@
 				}
 			],
 			"FileName": "wezterm-gui",
-			"Args": ["start", "--"],
-			"Env": { "WTQ": "1" },
+			"ArgumentList": [
+				{ "Argument": "start" },
+				{ "Argument": "--class" },
+				{ "Argument": "wtq" }
+			],
 			"MainWindow": "Either",
 			"Opacity": 100,
-			"Resize": "Never",
-			"HorizontalScreenCoverage": 100,
+			"Resize": "Always",
+			"HorizontalScreenCoverage": 101,
 			"HorizontalAlign": "Center",
+			"VerticalScreenCoverage": 42,
+			"VerticalOffset": 0,
 			"AnimationTypeToggleOn": "EaseOutQuart"
 		}
 	],
 	"ShowUiOnStart": true,
 	"AlwaysOnTop": true,
-	"Resize": "Never",
-	"HorizontalScreenCoverage": 100,
 	"AnimationTypeToggleOff": "EaseInQuart"
 }

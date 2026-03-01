@@ -55,6 +55,67 @@ Terminal configuration with:
 
 ---
 
+### WezTerm — `home/.wezterm.lua`
+
+[WezTerm](https://wezfurlong.org/wezterm/) by wez. GPU-accelerated terminal emulator with Lua configuration. Used as the primary terminal on Windows.
+
+- Font: IosevkaTerm Nerd Font, size 19
+- Background: Acrylic transparency (`win32_system_backdrop = "Acrylic"`, 80% opacity)
+- Color palette: Gentleman theme (custom dark palette matching ghostty config)
+- Default shell: `powershell.exe`
+- Max FPS: 240, Kitty graphics protocol enabled
+
+**Install location:** `%USERPROFILE%\.wezterm.lua`
+
+```powershell
+winget install wez.wezterm
+```
+
+---
+
+### Nushell
+
+[Nushell](https://www.nushell.sh/) by the Nushell contributors. A modern shell that treats all data as structured — commands return tables, lists, and records instead of plain text. Pairs well with Starship for a fully customized shell experience on Windows.
+
+```powershell
+winget install Nushell.Nushell
+```
+
+---
+
+### Starship — `.config/starship/starship.toml`
+
+[Starship](https://starship.rs/) by starship-rs contributors. Minimal, fast, cross-shell prompt written in Rust.
+
+Prompt layout:
+
+```
+~/path/to/dir               ⚡ 🐍  14:32
+👾 ➜
+```
+
+- Left: current directory in matrix green (`#00ff41`)
+- Right: tech stack icons (auto-detected per project), command duration (if >2s), clock in gray
+- Character: `👾 ➜` in magenta (`#ce08ff`) — red on error
+- Tech detection: Node ⚡, Python 🐍, Rust 🦀, Go 🐹, PHP 🐘, Java ☕, C/C++ ⚙️, Ruby 💎, Docker 🐳
+
+**Install:**
+
+```powershell
+choco install starship
+```
+
+**Config location:** `%USERPROFILE%\.config\starship.toml`
+
+Add to PowerShell profile (`$PROFILE`):
+
+```powershell
+$ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
+```
+
+---
+
 ### Float Tools
 
 Tools used as floating overlays or quick-access utilities on top of the desktop.
@@ -62,6 +123,16 @@ Tools used as floating overlays or quick-access utilities on top of the desktop.
 #### Windows Terminal Preview — Quake Mode
 
 Windows Terminal Preview includes a built-in quake/drop-down mode. Press `Win+`` (or `Alt+Z` via AutoHotkey) to toggle a terminal that slides down from the top of the screen, stays on top of all windows, and hides when dismissed. No third-party software required.
+
+#### WTQ — WezTerm Quake Mode
+
+[WTQ](https://github.com/flyingpie/windows-terminal-quake) by flyingpie. Brings quake-style drop-down terminal support to any terminal emulator on Windows, including WezTerm. Attach it to an existing WezTerm window and toggle it with a global hotkey.
+
+```powershell
+winget install flyingpie.windows-terminal-quake
+```
+
+Configure in `wtq.json` to target WezTerm and bind your preferred toggle key.
 
 #### Flow Launcher
 
@@ -172,22 +243,26 @@ AutoHotkey v2 scripts for Windows keybindings.
 ```
 .config/
   nvim-windows/          Neovim config (Windows)
+  starship/
+    starship.toml        Starship prompt config
   tacky-borders/
     config.yaml          Tacky Borders window border config
-home/user/
-  AppData/
-    Local/
-      Microsoft/
-        Windows Terminal Preview/
-          settings.json  Windows Terminal Preview config
-    Roaming/
-      yasb/
-        config.yaml      YASB bar config
-        styles.css       YASB stylesheet (Fluent Onyx v2)
-        scripts/         Helper PowerShell scripts
-  Documents/
-    autohotkey-scripts/
-      quake.ahk          AutoHotkey v2 keybindings
+home/
+  .wezterm.lua           WezTerm terminal config
+  user/
+    AppData/
+      Local/
+        Microsoft/
+          Windows Terminal Preview/
+            settings.json  Windows Terminal Preview config
+      Roaming/
+        yasb/
+          config.yaml      YASB bar config
+          styles.css       YASB stylesheet (Fluent Onyx v2)
+          scripts/         Helper PowerShell scripts
+    Documents/
+      autohotkey-scripts/
+        quake.ahk          AutoHotkey v2 keybindings
 ```
 
 ---
@@ -201,3 +276,7 @@ home/user/
 - [Flow Launcher](https://www.flowlauncher.com/) - Application launcher
 - [Spicetify](https://spicetify.app/) - Spotify client customization
 - [AutoHotkey](https://www.autohotkey.com/) - Windows automation scripting
+- [WezTerm](https://wezfurlong.org/wezterm/) - GPU-accelerated terminal emulator
+- [Nushell](https://www.nushell.sh/) - Modern structured data shell
+- [Starship](https://starship.rs/) - Minimal cross-shell prompt
+- [WTQ](https://github.com/flyingpie/windows-terminal-quake) - Quake-style drop-down mode for any terminal

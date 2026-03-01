@@ -1,0 +1,129 @@
+add_newline = false
+
+format = """
+$directory$fill$cmd_duration$python$nodejs$rust$golang$php$java$c$ruby$docker_context $time
+$character"""
+
+# ─── PROMPT CHARACTER ────────────────────────────────────────────────────────
+[character]
+success_symbol = "[👾 ➜](bold #ce08ff)"
+error_symbol = "[👾 ➜](bold red)"
+
+# ─── DIRECTORY ───────────────────────────────────────────────────────────────
+[directory]
+style = "bold #00ff41"
+truncation_length = 5
+truncation_symbol = "••/"
+home_symbol = "~"
+format = "[$path]($style)"
+read_only = "  "
+
+[directory.substitutions]
+"Desktop" = "Desktop"
+"Documents" = "Documents"
+"Downloads" = "Downloads"
+
+# ─── FILL (pushes right side) ────────────────────────────────────────────────
+[fill]
+symbol = " "
+
+# ─── TIME ────────────────────────────────────────────────────────────────────
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%H:%M"
+style = "#666666"
+
+# ─── CMD DURATION (only if > 2s) ─────────────────────────────────────────────
+[cmd_duration]
+min_time = 2000
+format = "[took ${duration} ]($style)"
+style = "#666666"
+
+# ─── TECH STACK ICONS ────────────────────────────────────────────────────────
+[python]
+symbol = "🐍"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["requirements.txt", "pyproject.toml", "setup.py", "Pipfile", ".python-version"]
+detect_extensions = ["py"]
+
+[nodejs]
+symbol = "⚡"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["package.json"]
+detect_extensions = ["js", "mjs", "cjs"]
+
+[rust]
+symbol = "🦀"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["Cargo.toml"]
+detect_extensions = ["rs"]
+
+[golang]
+symbol = "🐹"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["go.mod", "go.sum"]
+detect_extensions = ["go"]
+
+[php]
+symbol = "🐘"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["composer.json", "composer.lock"]
+detect_extensions = ["php"]
+
+[java]
+symbol = "☕"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["pom.xml", "build.gradle", "build.gradle.kts"]
+detect_extensions = ["java"]
+
+[c]
+symbol = "⚙️"
+format = "[$symbol ]($style)"
+style = ""
+detect_extensions = ["c", "cpp", "h", "hpp"]
+
+[ruby]
+symbol = "💎"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["Gemfile", "Rakefile"]
+detect_extensions = ["rb"]
+
+[docker_context]
+symbol = "🐳"
+format = "[$symbol ]($style)"
+style = ""
+detect_files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
+only_with_files = true
+
+# ─── DISABLED MODULES ────────────────────────────────────────────────────────
+[package]
+disabled = true
+
+[git_branch]
+disabled = true
+
+[git_status]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[memory_usage]
+disabled = true

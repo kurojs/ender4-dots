@@ -30,6 +30,11 @@ config.window_padding = {
 config.enable_scroll_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
+-- No titlebar when launched by WTQ (quake mode)
+if os.getenv("WTQ") == "1" then
+  config.window_decorations = "RESIZE"
+end
+
 -- ┌──────────────────────────────────────────────────────────────────────────────┐
 -- │                                  CURSOR                                      │
 -- └──────────────────────────────────────────────────────────────────────────────┘

@@ -1,0 +1,28 @@
+{
+	"$schema": "wtq.schema.json",
+	"Apps": [
+		{
+			"Name": "Wezterm",
+			"Hotkeys": [
+				{
+					"Modifiers": "Alt",
+					"KeyChar": "z"
+				}
+			],
+			"FileName": "wezterm-gui",
+			"Args": ["start", "--"],
+			"Env": { "WTQ": "1" },
+			"MainWindow": "Either",
+			"Opacity": 100,
+			"Resize": "Never",
+			"HorizontalScreenCoverage": 100,
+			"HorizontalAlign": "Center",
+			"AnimationTypeToggleOn": "EaseOutQuart"
+		}
+	],
+	"ShowUiOnStart": true,
+	"AlwaysOnTop": true,
+	"Resize": "Never",
+	"HorizontalScreenCoverage": 100,
+	"AnimationTypeToggleOff": "EaseInQuart"
+}

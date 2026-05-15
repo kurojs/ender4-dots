@@ -7,8 +7,8 @@ set -euo pipefail
 
 # ── Config ──────────────────────────────────
 CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/ocr-jp/config"
-JAPANESE_VOICE_ID="GxhGYQesaQaYKePCZDEC"
-SPANISH_VOICE_ID="h3KZVBOooxHZiKRxnsdE"
+JAPANESE_VOICE_ID="QsAQbwLjj42cienasfhu"
+SPANISH_VOICE_ID="Vt0Vg2uCO8fyNxSNCHTb"
 MODEL_ID="eleven_multilingual_v2"
 
 # Load API key from config
@@ -21,11 +21,10 @@ fi
 # ── Temp files ──────────────────────────────
 TMP_FULL="/tmp/ocr_full_$$.png"
 TMP_IMG="/tmp/ocr_$$.png"
-TMP_AUDIO_JP="/tmp/tts_jp_$$.mp3"
-TMP_AUDIO_ES="/tmp/tts_es_$$.mp3"
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ocr-jp"
 
 cleanup() {
-    rm -f "$TMP_FULL" "$TMP_IMG" "$TMP_AUDIO_JP" "$TMP_AUDIO_ES"
+    rm -f "$TMP_FULL" "$TMP_IMG"
 }
 trap cleanup EXIT
 
@@ -61,32 +60,40 @@ else
     notify-send "OCR-JP" "Copied: $JAPANESE_TEXT (translation unavailable)"
 fi
 
-# ── TTS background ──────────────────────────
+# ── TTS background (cached) ─────────────────
 if [ -n "$ELEVENLABS_API_KEY" ] && [ -n "$TRANSLATED" ]; then
+    mkdir -p "$CACHE_DIR"
+
+    _tts() {
+        local text="$1"
+        local voice_id="$2"
+        local hash
+        hash=$(echo -n "$text" | md5sum | cut -d' ' -f1)
+        local cache_file="$CACHE_DIR/${hash}_${voice_id}.mp3"
+
+        # Cache hit
+        if [ -s "$cache_file" ] && file "$cache_file" | grep -qi audio; then
+            mpv --no-video --really-quiet "$cache_file"
+            return
+        fi
+
+        # Cache miss
+        curl -s -X POST "https://api.elevenlabs.io/v1/text-to-speech/${voice_id}" \
+            -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg text "$text" --arg model "$MODEL_ID" '{text: $text, model_id: $model}')" \
+            --output "$cache_file" 2>/dev/null || { rm -f "$cache_file"; return; }
+
+        if [ -s "$cache_file" ] && file "$cache_file" | grep -qi audio; then
+            mpv --no-video --really-quiet "$cache_file"
+        else
+            rm -f "$cache_file"
+        fi
+    }
+
     (
-        # Japanese audio
-        curl -sf -X POST "https://api.elevenlabs.io/v1/text-to-speech/${JAPANESE_VOICE_ID}" \
-            -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
-            -H "Content-Type: application/json" \
-            -d "$(jq -n --arg text "$JAPANESE_TEXT" --arg model "$MODEL_ID" '{text: $text, model_id: $model}')" \
-            --output "$TMP_AUDIO_JP" 2>/dev/null
-
-        if [ -s "$TMP_AUDIO_JP" ]; then
-            paplay "$TMP_AUDIO_JP" 2>/dev/null
-            sleep 0.3
-        fi
-
-        # Spanish audio
-        curl -sf -X POST "https://api.elevenlabs.io/v1/text-to-speech/${SPANISH_VOICE_ID}" \
-            -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
-            -H "Content-Type: application/json" \
-            -d "$(jq -n --arg text "$TRANSLATED" --arg model "$MODEL_ID" '{text: $text, model_id: $model}')" \
-            --output "$TMP_AUDIO_ES" 2>/dev/null
-
-        if [ -s "$TMP_AUDIO_ES" ]; then
-            paplay "$TMP_AUDIO_ES" 2>/dev/null
-        fi
-
-        rm -f "$TMP_AUDIO_JP" "$TMP_AUDIO_ES"
+        _tts "$JAPANESE_TEXT" "$JAPANESE_VOICE_ID"
+        sleep 0.5
+        _tts "$TRANSLATED" "$SPANISH_VOICE_ID"
     ) &
 fi

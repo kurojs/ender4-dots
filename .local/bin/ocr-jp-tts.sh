@@ -41,6 +41,14 @@ if [ ! -s "$TMP_IMG" ]; then
     exit 1
 fi
 
+# ── OCR ─────────────────────────────────────
+JAPANESE_TEXT=$(tesseract "$TMP_IMG" stdout -l jpn --psm 6 2>/dev/null | sed '/^$/d' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | sed 's/ //g')
+
+if [ -z "$JAPANESE_TEXT" ]; then
+    notify-send -u critical "OCR-JP Error" "No Japanese text detected."
+    exit 1
+fi
+
 # ── Clipboard ───────────────────────────────
 echo -n "$JAPANESE_TEXT" | wl-copy
 

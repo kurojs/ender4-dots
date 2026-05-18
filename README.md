@@ -1,355 +1,139 @@
-# Ender4.Dots
+# EnderDots
 
-[![Arch Linux](https://img.shields.io/badge/Arch_Linux-6e40c9?logo=arch-linux&logoColor=white)](https://archlinux.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-6e40c9?logo=wayland&logoColor=white)](https://hyprland.org/)
-[![KDE](https://img.shields.io/badge/KDE-6e40c9?logo=kde&logoColor=white)](https://kde.org/)
-[![Neovim](https://img.shields.io/badge/Neovim-6e40c9?logo=neovim&logoColor=white)](https://neovim.io/)
-[![QuickShell](https://img.shields.io/badge/QuickShell-6e40c9?logo=qt&logoColor=white)](https://quickshell.org/)
-[![Fish](https://img.shields.io/badge/Fish-6e40c9?logo=fish&logoColor=white)](https://fishshell.com/)
-[![Ghostty](https://img.shields.io/badge/ghostty-6e40c9)](https://github.com/ghostty-org/ghostty)
-[![Windows](https://img.shields.io/badge/Windows_branch-6e40c9?logo=windows11&logoColor=white)](https://github.com/kurojs/ender4-dots/tree/windows)
-[![YASB](https://img.shields.io/badge/YASB-6e40c9)](https://github.com/amnweb/yasb)
-[![License: MIT](https://img.shields.io/badge/License-MIT-6e40c9)](https://opensource.org/licenses/MIT)
+[![Arch Linux](https://img.shields.io/badge/Arch_Linux-22c55e?logo=arch-linux&logoColor=white&labelColor=a855f7)](https://archlinux.org/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-a855f7?logo=wayland&logoColor=white&labelColor=22c55e)](https://hyprland.org/)
+[![KDE](https://img.shields.io/badge/KDE-22c55e?logo=kde&logoColor=white&labelColor=a855f7)](https://kde.org/)
+[![Neovim](https://img.shields.io/badge/Neovim-a855f7?logo=neovim&logoColor=white&labelColor=22c55e)](https://neovim.io/)
+[![OpenCode](https://img.shields.io/badge/OpenCode-22c55e?logo=visualstudiocode&logoColor=white&labelColor=a855f7)](https://github.com/opencode)
+[![Warp](https://img.shields.io/badge/Warp-a855f7?logo=warp&logoColor=white&labelColor=22c55e)](https://www.warp.dev/)
+[![Fish](https://img.shields.io/badge/Fish-22c55e?logo=fish&logoColor=white&labelColor=a855f7)](https://fishshell.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-a855f7?labelColor=22c55e)](https://opensource.org/licenses/MIT)
 
-> Ender4.Dots – Complete AI-Enhanced Desktop Environment for Arch Linux
+> EnderDots – Complete AI-Enhanced Desktop Environment for Arch Linux
 
-Ender4.Dots is a comprehensive collection of dotfiles featuring a modern Hyprland-based desktop environment with integrated AI capabilities and advanced KDE window management. Built for advanced users who demand productivity, customization, and cutting-edge technology in their daily workflow. From intelligent code editing with multiple AI providers to voice-controlled music playback, this configuration brings together automation, multimedia control, and smart scripting in a unified, highly optimized environment.
+EnderDots is a comprehensive collection of dotfiles featuring a modern desktop environment with integrated AI capabilities. Built for advanced users who demand productivity, customization, and cutting-edge technology in their daily workflow. From intelligent code editing to seamless application launching, this configuration brings together automation, modern terminal experiences, and smart scripting in a unified, highly optimized environment.
 
 ---
 
 ## Showcase
 
-![Desktop overview](https://i.imgur.com/v0UR6EQ.png)
-![QuickShell widgets](https://i.imgur.com/4WTa3pp.png)
-![Neovim](https://i.imgur.com/xZMlCHv.png)
-![Terminal](https://i.imgur.com/vtARRSL.png)
+### Japanese Reading Setup
+![E-book Reader](https://i.imgur.com/LrV4rAh.png)
+*A powerful setup for reading and language study.*
+- **[Vicinae](https://github.com/vicinaehq/vicinae)**: A fast, extensible Raycast-like application launcher and productivity tool.
+- **[ttu ebook-reader](https://github.com/ttu-ttu/ebook-reader)**: A clean, highly customizable browser-based e-book reader optimized for Japanese text.
+
+### Terminal Experience
+![Warp Terminal](https://i.imgur.com/DARAOms.png)
+*Next-generation terminal workflow.*
+- **[Warp](https://www.warp.dev/)**: A modern, GPU-accelerated terminal with built-in AI assistance, intuitive text editing, and collaborative workflows.
+
+### OpenCode Development
+![OpenCode Configuration](https://i.imgur.com/zRyTk7E.png)
+*AI-first IDE configuration.*
+- **OpenCode**: A deeply customized AI-native code editor optimized for fast iterations and seamless agent integrations.
+
+### Neovim Workflow
+![Neovim Configuration](https://i.imgur.com/xWJMQya.png)
+*Keyboard-centric, high-performance editing.*
+- **[Neovim](https://neovim.io/)**: A highly personalized, LazyVim-based setup integrating AI coding assistants and full LSP support for multiple languages.
+
+### Desktop Overview
+![EnderDots Overview](https://i.imgur.com/VxegBjU.png)
+*The complete EnderDots experience.*
+- **EnderDots Environment**: A unified look at the tiling window management, aesthetic consistency, and active tools running simultaneously.
 
 ---
 
-## 📦 Table of Contents
+## Table of Contents
 
-1. [Features](#features)
-2. [Architecture](#architecture)
-3. [Requirements](#requirements)
-4. [Installation](#installation)
-   - [Automated Installation](#automated-installation)
-   - [Manual Installation](#manual-installation)
-5. [Configuration](#configuration)
-6. [KDE Window Management](#kde-window-management)
-7. [AI Integration](#ai-integration)
-8. [Usage](#usage)
-9. [Troubleshooting](#troubleshooting)
-10. [Contributing](#contributing)
-11. [Acknowledgments](#acknowledgments)
+1. [Features](#-features)
+2. [Structure](#-structure)
+3. [Dependencies](#-dependencies)
+4. [Installation](#-installation)
+5. [Usage](#-usage)
 
 ---
 
-## 👾 Features
+## Features
 
-### Desktop Environment
-- **Hyprland Compositor**: Modern Wayland compositor with advanced window management
-- **QuickShell Interface**: Custom QML-based desktop shell with intelligent widgets
-- **KDE Integration**: Advanced window rules and Krohnkite tiling for enhanced productivity
-- **Dynamic Theming**: Material Design color schemes with automatic wallpaper integration
-- **Custom Scripts**: Extensive automation for workspace management and system control
-
-### Window Management
-- **KWin Rules**: Comprehensive window management with custom rules for all applications
-- **Krohnkite Tiling**: Advanced tiling window manager for KDE with intelligent layouts
-- **Application Exclusions**: Smart exclusions for apps that shouldn't be tiled
-- **Multi-Monitor Setup**: Optimized rules for multi-display configurations
+### Desktop Environment & Window Management
+- **Hyprland Compositor**: Modern Wayland compositor with advanced window management and aesthetic animations.
+- **KDE Integration**: Comprehensive window rules and tiling scripts for enhanced productivity.
+- **Dynamic Theming**: Custom green and purple aesthetics applied system-wide.
 
 ### AI-Powered Workflow
-- **Multiple AI Providers**: Claude, OpenAI, Gemini, Ollama integration
-- **Voice Control**: Real-time voice synthesis and command execution via [elevenlabs-mcp-tts](https://github.com/kurojs/elevenlabs-mcp-tts) — ElevenLabs TTS integration for OpenCode
-- **Intelligent Code Editing**: Advanced AI assistance in Neovim
-- **Smart Translation**: Built-in translation with multiple backends
+- **OpenCode & Neovim**: Deep AI integrations across both primary editors.
+- **Smart Launching**: Vicinae integration for quick, Raycast-style command execution.
+- **Language Study**: Optimized Japanese reading and translation setup.
 
 ### Development Environment
-- **Neovim Configuration**: LazyVim-based setup with AI plugins
-- **Terminal Excellence**: Ghostty with Fish shell and smart completions
-- **Code Assistance**: Avante, CodeCompanion, Copilot integration
-- **Debug Tools**: Advanced debugging and development utilities
-
-### Multimedia & Productivity
-- **Spotify Integration**: Advanced music control and playlist management
-- **Media Handling**: MPV, yt-dlp optimized playback
-- **Task Management**: Integrated TODO system with calendar
-- **Resource monitoring**: System metrics and performance widgets
+- **Neovim Configuration**: Keyboard-driven setup with AI plugins.
+- **Modern Terminals**: Configurations for both Warp and Ghostty, featuring Fish shell and Starship prompt.
+- **Alternative Editors**: Includes optimized setups for OpenCode and Zed.
 
 ---
 
-## 🧰 Architecture
+## Structure
 
 ```plaintext
-Ender4.Dots/
+EnderDots/
 ├── .config/
-│   ├── hypr/                   # Hyprland configuration
-│   │   ├── hyprland.conf       # Main compositor config
-│   │   ├── custom/             # Custom configurations
-│   │   ├── scripts/            # Automation scripts
-│   │   └── shaders/            # Visual effects
-│   ├── kwinrc                  # KWin configuration & Krohnkite settings
-│   ├── kwinrulesrc             # Window rules and application behavior
+│   ├── fish/                   # Fish shell aliases and functions
+│   ├── ghostty/                # Ghostty terminal configuration
+│   ├── hypr/                   # Hyprland compositor settings
 │   ├── nvim/                   # Complete Neovim setup
-│   │   ├── lua/config/         # Core configurations
-│   │   └── lua/plugins/        # AI and editing plugins
-│   ├── quickshell/ii/          # Custom desktop interface
-│   │   ├── modules/            # UI components
-│   │   ├── services/           # Backend services
-│   │   └── scripts/            # Helper utilities
-│   ├── fish/                   # Fish shell configuration
-│   ├── ghostty/                # Terminal configuration
-│   └── zed/                    # Alternative editor setup
-├── .local/bin/                 # Custom executables
-├── scripts/                    # Installation utilities
-├── Docs/                       # Documentation
-│   ├── AI.md                   # AI integration guide
-│   └── SPOTIFY.md              # Music setup guide
-├── install.sh                  # Automated installer
-└── README.md                   # This file
+│   ├── opencode/               # AI-first IDE configuration
+│   ├── quickshell/             # Custom desktop interface
+│   ├── tilda/                  # Drop-down terminal settings
+│   ├── zed/                    # Zed editor configuration
+│   ├── starship.toml           # Universal shell prompt
+│   ├── kwinrc & kwinrulesrc    # KDE Window management rules
+│   └── kuromy.kksrc            # KDE shortcut configuration
+├── .local/bin/                 # Custom user scripts and executables
+├── Docs/                       # Additional documentation
+├── home/ & usr/                # System-level file overlays
+└── install.sh                  # Automated installer script
 ```
 
 ---
 
-## 🛠 Requirements
+## Dependencies
 
-### System Dependencies
-
-- **Core**: `hyprland`, `waybar`, `dunst`, `rofi-wayland`
-- **KDE Components**: `kwin`, `krohnkite` (from AUR)
-- **Terminal**: `ghostty`, `fish`, `starship`
-- **Media**: `mpv`, `yt-dlp`, `playerctl`
-- **AI Tools**: `ollama`, `node.js` (for Gemini CLI)
-- **Development**: `neovim`, `git`, `curl`, `jq`
-- **Flatpak**: For SpeechNote integration
-
-### Optional Dependencies
-
-- **Claude Code**: AI-powered coding assistant
-- **Spotify Premium**: For enhanced music integration
-- **Zed Editor**: Alternative modern editor
+- **Core Desktop**: `hyprland`, `kwin`
+- **Terminals & Shells**: `warp-terminal`, `ghostty`, `fish`, `starship`
+- **Editors**: `neovim`, `opencode` (or VSCode-based editor), `zed`
+- **Productivity Tools**: `vicinae`
+- **Utilities**: `git`, `curl`, `jq`
 
 ---
 
-## 🍫 Installation
-
-### Automated Installation
+## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ender4-dots.git
-   cd ender4-dots
+   git clone https://github.com/your-username/EnderDots.git
+   cd EnderDots
    ```
 
-2. Run the installation script:
+2. Run the automated installation script:
    ```bash
    bash install.sh
    ```
 
-### Manual Installation (Recommended)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/ender4-dots.git
-   cd ender4-dots
-   ```
-
-2. Install system dependencies:
-   ```bash
-   sudo pacman -Syu hyprland waybar dunst rofi-wayland ghostty fish neovim git
-   ```
-
-3. Install Krohnkite from AUR:
-   ```bash
-   yay -S kwin-scripts-krohnkite
-   # or
-   paru -S kwin-scripts-krohnkite
-   ```
-
-4. Copy configuration files:
-   ```bash
-   cp -r .config/* ~/.config/
-   cp -r .local/* ~/.local/
-   chmod +x ~/.local/bin/*
-   ```
-
-5. Install AI components (see [AI Integration](#ai-integration))
-
-6. Restart your session or reload KWin:
-   ```bash
-   qdbus org.kde.KWin /KWin reconfigure
-   ```
+*(Alternatively, manually copy the contents of `.config` to `~/.config/` and `.local/bin` to `~/.local/bin/`)*
 
 ---
 
-## 📼 Configuration
+## Usage
 
-### Hyprland Setup
-
-The configuration is modular and split across multiple files:
-
-- `hyprland.conf`: Main configuration
-- `custom/`: User-specific customizations
-- `scripts/`: Automation and helper scripts
-
-### QuickShell Interface
-
-QuickShell provides a complete desktop experience:
-
-- **Bar**: System information, workspaces, media controls
-- **Sidebar**: AI chat, translator, music player
-- **Widgets**: Calendar, weather, notifications
-- **Overlays**: App launcher, session management
-
-### Terminal Configuration
-
-- **Ghostty**: Modern terminal with GPU acceleration
-- **Fish Shell**: Intelligent completions and syntax highlighting
-- **Starship**: Cross-shell prompt with git integration
-
----
-
-## 🪟 KDE Window Management
-
-### Krohnkite Tiling Manager
-
-Ender4.Dots includes advanced window management through KWin and the Krohnkite tiling script:
-
-#### Installation Prerequisites
-```bash
-# Install Krohnkite from AUR
-yay -S kwin-scripts-krohnkite
-```
-
-#### Key Features
-- **Automatic Tiling**: Intelligent window arrangement with multiple layout modes
-- **Custom Exclusions**: Applications that shouldn't be tiled are automatically handled
-- **Multi-Monitor Support**: Optimized for multiple display configurations
-- **Dynamic Gaps**: Configurable window gaps and borders
-
-#### Window Rules (`kwinrulesrc`)
-The configuration includes comprehensive window rules for:
-
-- **Development Tools**: IDEs, terminals, and code editors with optimal sizing
-- **Media Applications**: Video players, image viewers with floating behavior
-- **System Tools**: File managers, system settings with appropriate positioning
-- **Gaming**: Games and emulators with fullscreen and performance optimizations
-- **Communication**: Chat apps, email clients with sticky workspace assignments
-
-#### KWin Configuration (`kwinrc`)
-Includes optimized settings for:
-
-- **Krohnkite Integration**: Tiling layouts and behavior
-- **Animation Settings**: Smooth transitions and effects
-- **Compositor Options**: Performance and visual quality balance
-- **Window Decorations**: Minimalist borders and title bars
-- **Focus Management**: Mouse and keyboard focus behavior
-
-#### Keyboard Shortcuts
-- **Meta + J/K/H/L**: Navigate between tiled windows
-- **Meta + Shift + J/K/H/L**: Move windows in tiling layout
-- **Meta + R**: Rotate window layout
-- **Meta + Return**: Set window as master
-- **Meta + T**: Toggle floating mode for current window
-
-#### Customization
-To modify window rules:
-1. Use KDE System Settings → Window Management → Window Rules
-2. Or edit `~/.config/kwinrulesrc` directly
-3. Apply changes: `qdbus org.kde.KWin /KWin reconfigure`
-
----
-
-## 🤖 AI Integration
-
-Ender4.Dots includes comprehensive AI integration across multiple components. See [Docs/AI.md](Docs/AI.md) for detailed setup instructions including:
-
-- **Voice Control**: Gemini CLI integration
-- **Code Assistance**: Multiple AI providers in Neovim
-- **Translation**: Real-time translation services
-- **Music Control**: AI-powered Spotify integration
-
-### Quick AI Setup
-
-1. Install Ollama and configure local models
-2. Set up API keys for external providers
-3. Configure voice synthesis with SpeechNote
-4. Follow Spotify integration guide in [Docs/SPOTIFY.md](Docs/SPOTIFY.md)
-
----
-
-## 🌀 Usage
-
-### Desktop Navigation
-
-- **Super + Number**: Switch workspaces
-- **Super + Shift + Number**: Move window to workspace
-- **Super + Q**: Close window
-- **Super + Return**: Open terminal
-- **Super + D**: Application launcher
-
-### Window Management (Krohnkite)
-
-- **Meta + J/K/H/L**: Navigate tiled windows
-- **Meta + Shift + J/K/H/L**: Move windows in layout
-- **Meta + R**: Rotate layout
-- **Meta + T**: Toggle floating mode
-
-### AI Commands
-
-- **Voice activation**: Say "start speaking now" to enable TTS
-- **Music control**: "next song", "previous song", "pause music"
-- **Code assistance**: Built into Neovim workflow
-- **Translation**: Integrated in QuickShell sidebar
-
-### Development Workflow
-
-- **Neovim**: `nvim` for AI-enhanced code editing
-- **Claude Code**: `claude-code` for AI pair programming
-- **Debugging**: Integrated DAP configuration
-- **Git integration**: Advanced git workflows
-
----
-
-## ☕ Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## Windows Branch
-
-The [windows branch](https://github.com/kurojs/ender4-dots/tree/windows) contains the full Windows 11 dotfiles for this same setup, adapted for Windows. It includes:
-
-- Neovim with Windows-specific adaptations (Node.js detection, no tmux, no Obsidian)
-- YASB status bar with Fluent Onyx v2 theme
-- Windows Terminal Preview configuration
-- AutoHotkey v2 scripts for virtual desktop navigation and keybindings
-- Spicetify for Spotify customization
-- Flow Launcher with plugins (search, tasks, DeepL, GIF search)
-
----
-
-## Acknowledgments
-
-- [Hyprland](https://hyprland.org/) - Modern Wayland compositor
-- [QuickShell](https://quickshell.org/) - QML desktop shell framework
-- [Krohnkite](https://github.com/esjeon/krohnkite) - KWin tiling script
-- [LazyVim](https://github.com/LazyVim/LazyVim) - Neovim configuration framework
-- [Ghostty](https://github.com/ghostty-org/ghostty) - Modern terminal emulator
-- [Fish](https://fishshell.com/) - Smart command line shell
-- AI Providers: Claude, OpenAI, Google Gemini, Ollama
-- [Open-LLM-VTuber](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber) - Voice-interactive AI VTuber companion with Live2D support (York's engine)
-- [Deadbeat VTuber Model](https://jawlipops.gumroad.com/l/XBsYK) by jawli - Live2D model that gives York her expressiveness and personality
-- Arch Linux community and all open source contributors
+- **Application Launcher**: Use Vicinae for quick access to apps and scripts.
+- **Development**: Launch `nvim`, `opencode`, or `zed` for pre-configured development environments.
+- **Terminal**: Use Warp or Ghostty with Fish shell for an optimized CLI experience.
+- **Window Management**: Leverage Hyprland or KDE tiling shortcuts (e.g., Super + hjkl) to navigate and organize your workspace efficiently.
 
 ---
 
 <footer>
-<sub>Crafted with Determination 👾 by Kuro • Powered by Arch Linux • Enhanced with AI • Managed with KDE</sub>
+<sub>Crafted with Determination by Kuro • Powered by Arch Linux • Enhanced with AI</sub>
 </footer>

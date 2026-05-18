@@ -79,7 +79,6 @@ EnderDots/
 ├── .config/
 │   ├── fish/                   # Fish shell aliases and functions
 │   ├── ghostty/                # Ghostty terminal configuration
-│   ├── hypr/                   # Hyprland compositor settings
 │   ├── nvim/                   # Complete Neovim setup
 │   ├── opencode/               # AI-first IDE configuration
 │   ├── quickshell/             # Custom desktop interface
@@ -91,14 +90,13 @@ EnderDots/
 ├── .local/bin/                 # Custom user scripts and executables
 ├── Docs/                       # Additional documentation
 ├── home/ & usr/                # System-level file overlays
-└── install.sh                  # Automated installer script
 ```
 
 ---
 
 ## Dependencies
 
-- **Core Desktop**: `hyprland`, `kwin`
+- **Core Desktop**: `kwin`
 - **Terminals & Shells**: `warp-terminal`, `ghostty`, `fish`, `starship`
 - **Editors**: `neovim`, `opencode` (or VSCode-based editor), `zed`
 - **Productivity Tools**: `vicinae`
@@ -110,16 +108,20 @@ EnderDots/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/EnderDots.git
+   git clone https://github.com/kurojs/EnderDots.git
    cd EnderDots
    ```
 
-2. Run the automated installation script:
+2. Copy the configuration files manually to your home directory:
    ```bash
-   bash install.sh
+   cp -r .config/* ~/.config/
+   cp -r .local/bin/* ~/.local/bin/
    ```
 
-*(Alternatively, manually copy the contents of `.config` to `~/.config/` and `.local/bin` to `~/.local/bin/`)*
+3. Ensure your scripts are executable:
+   ```bash
+   chmod +x ~/.local/bin/*
+   ```
 
 ---
 

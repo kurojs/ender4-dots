@@ -1,7 +1,6 @@
 # EnderDots
 
 [![Arch Linux](https://img.shields.io/badge/Arch_Linux-22c55e?logo=arch-linux&logoColor=white&labelColor=a855f7)](https://archlinux.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-a855f7?logo=wayland&logoColor=white&labelColor=22c55e)](https://hyprland.org/)
 [![KDE](https://img.shields.io/badge/KDE-22c55e?logo=kde&logoColor=white&labelColor=a855f7)](https://kde.org/)
 [![Neovim](https://img.shields.io/badge/Neovim-a855f7?logo=neovim&logoColor=white&labelColor=22c55e)](https://neovim.io/)
 [![OpenCode](https://img.shields.io/badge/OpenCode-22c55e?logo=visualstudiocode&logoColor=white&labelColor=a855f7)](https://github.com/opencode)
@@ -58,7 +57,6 @@ EnderDots is a comprehensive collection of dotfiles featuring a modern desktop e
 ## Features
 
 ### Desktop Environment & Window Management
-- **Hyprland Compositor**: Modern Wayland compositor with advanced window management and aesthetic animations.
 - **KDE Integration**: Comprehensive window rules and tiling scripts for enhanced productivity.
 - **Dynamic Theming**: Custom green and purple aesthetics applied system-wide.
 
@@ -130,7 +128,7 @@ EnderDots/
 - **Application Launcher**: Use Vicinae for quick access to apps and scripts.
 - **Development**: Launch `nvim`, `opencode`, or `zed` for pre-configured development environments.
 - **Terminal**: Use Warp or Ghostty with Fish shell for an optimized CLI experience.
-- **Window Management**: Leverage Hyprland or KDE tiling shortcuts (e.g., Super + hjkl) to navigate and organize your workspace efficiently.
+- **Window Management**: Leverage KDE tiling shortcuts (e.g., Super + hjkl) to navigate and organize your workspace efficiently.
 
 ---
 

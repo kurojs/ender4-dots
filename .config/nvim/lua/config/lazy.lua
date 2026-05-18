@@ -2,11 +2,6 @@
 
 -- Node.js configuration - always use latest stable version
 vim.g.node_host_prog = vim.fn.exepath("node") or "/usr/local/bin/node"
--- Ensure we're using a recent Node version for LSPs and plugins
-if vim.fn.executable("node") == 1 then
-  local node_version = vim.fn.system("node --version"):gsub("\n", "")
-  print("Using Node.js version: " .. node_version)
-end
 
 -- Spell-checking
 vim.opt.spell = true -- activa spell checker
@@ -55,8 +50,12 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
     { import = "lazyvim.plugins.extras.editor.snacks_picker" },
 
+    -- Debgugging plugins
+    { import = "lazyvim.plugins.extras.dap.core" },
+
     -- Formatting plugins
-    { import = "lazyvim.plugins.extras.formatting.biome" },
+
+    { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
 
     -- Linting plugins
@@ -65,12 +64,6 @@ require("lazy").setup({
     -- Language support plugins
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.angular" },
-    { import = "lazyvim.plugins.extras.lang.astro" },
-    { import = "lazyvim.plugins.extras.lang.go" },
-    { import = "lazyvim.plugins.extras.lang.nix" },
-    { import = "lazyvim.plugins.extras.lang.toml" },
 
     -- Coding plugins
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
@@ -82,7 +75,6 @@ require("lazy").setup({
 
     -- AI plugins
     { import = "lazyvim.plugins.extras.ai.copilot" },
-    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
 
     -- Import/override with your plugins
     { import = "plugins" },

@@ -202,6 +202,15 @@ return {
   -- Description: A Neovim plugin for creating a customizable dashboard.
   {
     "folke/snacks.nvim",
+    keys = {
+      {
+        "<leader>fb",
+        function()
+          Snacks.picker.buffers()
+        end,
+        desc = "Find Buffers",
+      },
+    },
     opts = {
       notifier = {},
       image = {},
@@ -237,18 +246,18 @@ return {
           { section = "startup" },
         },
         preset = {
-        header = [[
+          header = [[
 ▗▖ ▗▖▗▖ ▗▖▗▄▄▖  ▗▄▖
 ▐▌▗▞▘▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌
 ▐▛▚▖ ▐▌ ▐▌▐▛▀▚▖▐▌ ▐▌
 ▐▌ ▐▌▝▚▄▞▘▐▌ ▐▌▝▚▄▞▘
 
 👾 ゴ ゴ ゴ ゴ ゴ... 🍫
-        ]],
+          ]],
           -- stylua: ignore
           ---@type snacks.dashboard.Item[]
           keys = {
-            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = " ", key = "ff", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
             { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },

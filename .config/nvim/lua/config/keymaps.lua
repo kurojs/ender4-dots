@@ -24,14 +24,14 @@ vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive) -- Navig
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext) -- Navigate to the next pane
 
 ----- OBSIDIAN -----
-vim.keymap.set("n", "<leader>oc", "<cmd>ObsidianCheck<CR>", { desc = "Obsidian Check Checkbox" })
-vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>", { desc = "Insert Obsidian Template" })
-vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian Open<CR>", { desc = "Open in Obsidian App" })
-vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
-vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
-vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" })
-vim.keymap.set("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian" })
-vim.keymap.set("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", { desc = "Quick Switch" })
+vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian check<CR>", { desc = "Obsidian Check Checkbox" })
+vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian template<CR>", { desc = "Insert Obsidian Template" })
+vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian open<CR>", { desc = "Open in Obsidian App" })
+vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<CR>", { desc = "Show Obsidian Backlinks" })
+vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian links<CR>", { desc = "Show Obsidian Links" })
+vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<CR>", { desc = "Create New Note" })
+vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<CR>", { desc = "Search Obsidian" })
+vim.keymap.set("n", "<leader>oq", "<cmd>Obsidian quick-switch<CR>", { desc = "Quick Switch" })
 
 ----- OIL -----
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
@@ -161,39 +161,3 @@ function SaveFile()
     vim.notify("Error: " .. err, vim.log.levels.ERROR) -- Show the error message if it fails
   end
 end
-
--- TTS: Leer texto seleccionado con speech_wrapper
-vim.keymap.set('v', '<leader>s', function()
-  -- Copiar selección al registro z
-  vim.cmd('normal! "zy')
-  local text = vim.fn.getreg('z')
-  
-  -- Limpiar formato básico
-  text = text:gsub('```.-```', ' ') -- Bloques de código
-  text = text:gsub('`[^`]+`', ' ') -- Código inline
-  text = text:gsub('[#*_~]', '') -- Markdown
-  text = text:gsub('%[(.-)%]%(.-%)', '%1') -- Links
-  text = text:gsub('[{}%[%]()<>|/\\]', ' ') -- Símbolos
-  text = text:gsub('[🔊🔇📋🚀⚙️✅❌⚠️→←↑↓✓✗]', ' ') -- Emojis
-  text = text:gsub('%s+', ' ') -- Espacios múltiples
-  text = vim.trim(text)
-  
-  if text == '' or #text < 5 then
-    vim.notify('No hay texto para leer', vim.log.levels.WARN)
-    return
-  end
-  
-  -- Escapar comillas para bash
-  text = text:gsub('"', '\\"')
-  
-  -- Llamar al wrapper
-  vim.fn.system('/home/kuro/.local/bin/speech_wrapper.sh "' .. text .. '" &')
-  vim.notify('🔊 Leyendo selección...', vim.log.levels.INFO)
-end, { desc = 'TTS: Leer selección' })
-
--- TTS: Detener reproducción
-vim.keymap.set('n', '<leader>tss', function()
-  vim.fn.system('pkill -f speech_wrapper.sh')
-  vim.fn.system('pkill -f SpeechNote')
-  vim.notify('🔇 TTS detenido', vim.log.levels.INFO)
-end, { desc = 'TTS: Detener' })

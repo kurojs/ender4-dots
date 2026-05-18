@@ -1,17 +1,30 @@
 return {
   "saghen/blink.cmp",
   lazy = true,
-  dependencies = { "saghen/blink.compat" },
+  dependencies = {
+    "saghen/blink.compat",
+    "fang2hou/blink-copilot",
+  },
   opts = {
     sources = {
-      default = { "avante_commands", "avante_mentions", "avante_files" },
+      default = { "lsp", "path", "snippets", "buffer", "copilot", "avante_commands", "avante_mentions", "avante_files" },
       compat = {
         "avante_commands",
         "avante_mentions",
         "avante_files",
       },
-      -- LSP score_offset is typically 60
       providers = {
+        copilot = {
+          name = "copilot",
+          module = "blink-copilot",
+          score_offset = 100,
+          async = true,
+          opts = {
+            max_completions = 3,
+            kind_name = "Copilot",
+            kind_icon = " ",
+          },
+        },
         avante_commands = {
           name = "avante_commands",
           module = "blink.compat.source",

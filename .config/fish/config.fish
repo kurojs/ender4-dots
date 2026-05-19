@@ -26,7 +26,7 @@ function fish_prompt -d "Custom prompt with emoji and path"
     
     # JavaScript/Node.js
     if test -f package.json
-        set tech_icons "$tech_icons⚡"
+        set tech_icons "$tech_icons🟣"
     end
     
     # Python
@@ -74,8 +74,8 @@ function fish_prompt -d "Custom prompt with emoji and path"
     for file in $files
         switch $file
             case "*.js" "*.mjs"
-                if not string match -q "*⚡*" "$tech_icons"
-                    set tech_icons "$tech_icons⚡"
+                if not string match -q "*🟣*" "$tech_icons"
+                    set tech_icons "$tech_icons🟣"
                 end
             case "*.jsx" "*.tsx"
                 set tech_icons "$tech_icons⚛️"
@@ -151,31 +151,23 @@ function fish_prompt -d "Custom prompt with emoji and path"
 end
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
     set fish_greeting
-
 end
-
-# starship init fish | source # Disabled for custom prompt
-# Quickshell terminal colors disabled - using custom colors instead
-# if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-#     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-# end
 
 alias pamcan pacman
 alias ls 'eza --icons'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
 alias setwallpaper '$HOME/.config/hypr/scripts/wallpaper.sh set'
-    
-
-# function fish_prompt
-#   set_color cyan; echo (pwd)
-#   set_color green; echo '> '
-# end
 
 # opencode
 fish_add_path /home/kuro/.opencode/bin
 
 # Local binaries
 fish_add_path /home/kuro/.local/bin
+
+fish_add_path /home/kuro/.spicetify
+fish_add_path $HOME/.npm-global/bin
+
+# OpenClaw Completion
+test -f "/home/kuro/.openclaw/completions/openclaw.fish"; and source "/home/kuro/.openclaw/completions/openclaw.fish"

@@ -4,10 +4,10 @@
 ![Shell Script](https://img.shields.io/badge/Shell-121011?style=for-the-badge&logo=gnu-bash&logoColor=white&labelColor=4CAF50)
 ![Python](https://img.shields.io/badge/Python-20232A?style=for-the-badge&logo=python&logoColor=F7DF1E&labelColor=9C27B0)
 ![Spotify API](https://img.shields.io/badge/Spotify%20API-1DB954?style=for-the-badge&logo=spotify&logoColor=white&labelColor=4CAF50)
-![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-6200EA?style=for-the-badge&labelColor=9C27B0&logo=google)
+![Antigravity CLI](https://img.shields.io/badge/Antigravity%20CLI-6200EA?style=for-the-badge&labelColor=9C27B0&logo=google)
 
 This guide explains how to configure and use Spotify integration within **VoxAI.Dots**.  
-You'll be able to fetch and play tracks from your playlists using simple commands or voice triggers via Gemini CLI.
+You'll be able to fetch and play tracks from your playlists using simple commands or voice triggers via Antigravity CLI.
 
 ---
 
@@ -128,7 +128,7 @@ chmod +x ~/.local/bin/*.sh
 ---
 
 ## ▶ 📼 How to Use It  
-_(No need to memorize this — Gemini CLI will handle it!)_
+_(No need to memorize this — Antigravity CLI will handle it!)_
 
 ### Play a Full Playlist by URL
 
@@ -177,7 +177,7 @@ chmod +x ~/.local/bin/speech_wrapper.sh
 
 - The scripts use `curl` and `jq` to query Spotify’s Web API  
 - `get_spotify_token.py` handles both access and refresh tokens  
-- Fully compatible with Gemini CLI
+- Fully compatible with Antigravity CLI
 
 ---
 

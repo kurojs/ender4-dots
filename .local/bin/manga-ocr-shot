@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# One-shot OCR: manga-ocr on a single image file
+# Usage: manga-ocr-shot <image_path>
+
+exec "$HOME/.local/venvs/manga-ocr/bin/python" -c "
+import sys
+from manga_ocr import MangaOcr
+m = MangaOcr()
+print(m(sys.argv[1]), end='')
+" "$1" 2>/dev/null

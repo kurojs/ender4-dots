@@ -25,7 +25,7 @@ This document outlines the comprehensive stack of applications, CLI tools, and d
 ## 🤖 AI, Automation & Toolchains
 - **Claude Code (`claude`)** *(NPM)*: Anthropic's official CLI tool for AI pair programming directly in the terminal.
 - **GitHub Copilot CLI (`copilot`)** *(Local)*: GitHub's AI CLI assistant for quick command explanations, generation, and git operations.
-- **Gemini CLI (`gemini`)** *(NPM)*: Google's Gemini command-line interface for AI integrations and voice control workflows.
+- **Antigravity CLI (`agy`)** *(Local)*: Google's agentic AI command-line interface for AI integrations and voice control workflows.
 - **OpenClaw (`openclaw`)** *(NPM)*: Specialized AI CLI agent tool installed globally for advanced automation and codebase tasks.
 - **Pi / Gentle-Engram (`pi`, `pi-engram`)** *(NPM)*: Custom AI coding agents and persistent memory (Engram) adapters to retain context across sessions.
 - **NotebookLM MCP CLI** *(Source)*: Integration for Google's NotebookLM, allowing interaction and research automation directly from the terminal.
@@ -37,7 +37,7 @@ This document outlines the comprehensive stack of applications, CLI tools, and d
 - **ttu-ebook-reader** *(Web / GitHub)*: Highly customizable browser-based e-book reader, specifically optimized for vertical/horizontal Japanese text and lookup dictionaries.
 - **Anki** *(Pacman / Flatpak)*: Spaced repetition flashcard system, essential for JLPT N1 vocabulary and kanji retention.
 - **n1-translator & n1-tools** *(Custom / Source)*: Bespoke local translation tools and utilities built to aid advanced Japanese comprehension.
-- **Custom OCR & TTS Scripts (`ocr-jp.sh`, `ocr-jp-tts.sh`)** *(Local)*: Bash utilities leveraging Tesseract and local/cloud TTS to extract Japanese text from screen selections and read them aloud natively.
+- **Custom OCR & TTS Scripts (`ocr-jp.sh`, `ocr-jp-tts.sh`, `ocr-jp-manga.sh`, `ocr-jp-tts-manga.sh`)** *(Local)*: Bash utilities leveraging Tesseract or [manga-ocr](https://github.com/kha-white/manga-ocr) and local/cloud TTS to extract Japanese text from screen selections and read them aloud natively.
 
 ## 🌐 Web Browsers
 - **Zen Browser** *(AUR)*: Primary daily driver. A highly optimized, privacy-focused Firefox fork tailored for keyboard-driven workflows.

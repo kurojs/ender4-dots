@@ -23,7 +23,7 @@ This document covers the AI integration components within Ender4.Dots, a compreh
 2. [AI Components](#ai-components)
 3. [Installation](#installation)
 4. [Configuration](#configuration)
-   - [Gemini CLI Setup](#gemini-cli-setup)
+    - [Antigravity CLI (agy) Setup](#antigravity-cli-agy-setup)
    - [Neovim AI Plugins](#neovim-ai-plugins)
    - [Voice Synthesis](#voice-synthesis)
    - [Spotify Integration](#spotify-integration)
@@ -37,7 +37,7 @@ This document covers the AI integration components within Ender4.Dots, a compreh
 
 Ender4.Dots integrates AI capabilities throughout the entire desktop environment:
 
-- **Voice-Controlled Desktop**: Seamless integration with Gemini CLI for system control
+- **Voice-Controlled Desktop**: Seamless integration with Antigravity CLI (agy) for system control
 - **Intelligent Code Editing**: Multiple AI providers in Neovim (Claude, OpenAI, Copilot)
 - **Smart Translation**: Real-time translation in QuickShell interface
 - **Music Intelligence**: AI-powered Spotify control and recommendations
@@ -55,7 +55,7 @@ Ender4.Dots integrates AI capabilities throughout the entire desktop environment
 - **Gemini**: Code analysis and suggestions
 
 ### Desktop Intelligence
-- **Gemini CLI**: Voice commands and system control
+- **Antigravity CLI (agy)**: Voice commands and system control
 - **QuickShell AI**: Integrated translation and chat widgets
 - **Ollama Integration**: Local AI models for privacy
 - **Speech Synthesis**: SpeechNote for voice feedback
@@ -92,7 +92,7 @@ flatpak install -y flathub net.mkiol.SpeechNote
    ollama pull mistral
    ```
 
-2. **Gemini CLI**:
+2. **Antigravity CLI (agy)**:
    ```bash
    npm install -g @google/generative-ai
    # Configure API key (see configuration section)
@@ -107,9 +107,9 @@ flatpak install -y flathub net.mkiol.SpeechNote
 
 ## 📼 Configuration
 
-### Gemini CLI Setup
+### Antigravity CLI (agy) Setup
 
-1. **Install and configure Gemini CLI**:
+1. **Install and configure Antigravity CLI (agy)**:
    ```bash
    mkdir -p ~/.gemini
    cp .gemini/GEMINI.md ~/.gemini/
@@ -143,7 +143,7 @@ The configuration includes multiple AI providers configured in `~/.config/nvim/l
    ~/.local/bin/speech_wrapper.sh "Text to speak"
    ```
 
-2. **Voice activation in Gemini CLI**:
+2. **Voice activation in Antigravity CLI (agy)**:
    - Instruction: `"start speaking now"`
    - Command executed: `~/.local/bin/speech_wrapper.sh "{response}"`
 
@@ -236,13 +236,13 @@ claude-code review --diff
    systemctl restart ollama
    ```
 
-4. **Gemini CLI not responding**:
+4. **Antigravity CLI (agy) not responding**:
    ```bash
    # Check API key configuration
    echo $GEMINI_API_KEY
    
    # Test basic functionality
-   gemini-cli "Hello, test message"
+    agy "Hello, test message"
    ```
 
 ---
@@ -288,7 +288,7 @@ return {
 
 ## Acknowledgments
 
-- [Gemini CLI](https://github.com/google/gemini-cli) by Google
+- [Antigravity CLI (agy)](https://antigravity.google/) by Google
 - [SpeechNote](https://github.com/mkiol/SpeechNote) by mkiol
 - [Ollama](https://ollama.ai/) for local AI models
 - [Avante.nvim](https://github.com/yetone/avante.nvim) for Claude integration

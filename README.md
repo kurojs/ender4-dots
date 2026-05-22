@@ -106,6 +106,17 @@ EnderDots/
 
 ## Installation
 
+### Arch Linux (AUR) — Recommended
+
+```bash
+yay -S ender-dots
+ender-dots
+```
+
+The AUR package installs all config files under `/usr/share/ender-dots/` and provides the `ender-dots` command — an interactive TUI installer built with Go and Bubbletea that guides you through applying configurations.
+
+### Manual (from source)
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/kurojs/EnderDots.git

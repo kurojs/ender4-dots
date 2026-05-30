@@ -1,33 +1,35 @@
-background-opacity = 0.79
+background-opacity = 0.80
 background-blur-radius = 20
 window-decoration = client
 
 window-theme = ghostty
 
-palette = 1=#cb7c94
-palette = 2=#b7cc85
-palette = 3=#ffe066
+palette = 0=#06080f
+palette = 1=#fca5a5
+palette = 2=#86efac
+palette = 3=#fcd34d
 palette = 4=#7fb4ca
-palette = 5=#ff8dd7
-palette = 6=#7aa89f
+palette = 5=#c4b5fd
+palette = 6=#5c6170
 palette = 7=#f3f6f9
-palette = 8=#8a8fa3
-palette = 9=#de8fa8
-palette = 10=#d1e8a9
-palette = 11=#fff7b1
+palette = 8=#1e293b
+palette = 9=#eb6f92
+palette = 10=#a6e3a1
+palette = 11=#fde68a
 palette = 12=#a3d4d5
-palette = 13=#ffaeea
-palette = 14=#7fb4ca
-palette = 15=#f3f6f9
+palette = 13=#e8a0bf
+palette = 14=#94a3b8
+palette = 15=#ffffff
 
 background = 06080f
 foreground = f3f6f9
-cursor-color = 4b2d5e
+cursor-color = c4b5fd
 selection-background = 263356
 selection-foreground = f3f6f9
 
-font-family = IosevkaTerm NF
-font-size = 16
+
+font-family = "Iosevka Nerd Font"
+font-size = 18
 window-padding-color = extend
 window-step-resize = true
 window-padding-balance = true
@@ -63,7 +65,7 @@ keybind = alt+s=write_screen_file:paste
 ### command = "tmux new-session -A -s main"
 keybind = shift+enter=text:\x1b\r
 
-background-image = /home/kuro/Desktop/ファイル/画像/gastly.png
+### background-image = /home/kuro/Desktop/ファイル/画像/gastly.png
 background-image-position = bottom-right
 background-image-fit = none
 background-image-opacity = 0.3

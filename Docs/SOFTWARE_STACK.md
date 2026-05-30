@@ -14,6 +14,9 @@ This document outlines the comprehensive stack of applications, CLI tools, and d
 - **Tilda** *(Pacman)*: Drop-down terminal configured for quick, transient CLI tasks.
 - **Fish Shell** *(Pacman)*: Default interactive shell, featuring out-of-the-box syntax highlighting and intelligent autosuggestions.
 - **Starship** *(Pacman)*: Universal, cross-shell prompt keeping the CLI environment consistent.
+- **Zoxide** *(Cargo)*: Smarter `cd` that learns your directory patterns. Navigate with `z <fragment>` and jump instantly.
+- **Atuin** *(Cargo)*: SQLite-backed shell history with end-to-end encrypted sync, fuzzy search via Ctrl+R, and usage statistics.
+- **Bat** *(Cargo)*: Modern `cat` replacement with syntax highlighting, line numbers, and Git integration.
 
 ## 🛠️ Editors, IDEs & Note-taking
 - **OpenCode** *(Web / Installer)*: Deeply customized AI-native code editor. Optimized for fast iterations, autonomous agents, and contextual codebase understanding.

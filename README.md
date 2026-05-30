@@ -100,7 +100,7 @@ EnderDots/
 - **Terminals & Shells**: `warp-terminal`, `ghostty`, `fish`, `starship`
 - **Editors**: `neovim`, `opencode` (or VSCode-based editor), `zed`
 - **Productivity Tools**: `vicinae`
-- **Utilities**: `git`, `curl`, `jq`
+- **Utilities**: `git`, `curl`, `jq`, `zoxide`, `atuin`, `bat`
 
 ---
 

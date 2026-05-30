@@ -2,6 +2,8 @@ if status is-interactive
     set fish_greeting
     starship init fish | source
 
+    zoxide init fish | source
+    atuin init fish | source
     # Kurox syntax colors
     set fish_color_command 86efac
     set fish_color_param c4b5fd
@@ -12,6 +14,18 @@ if status is-interactive
     set fish_color_escape e8a0bf
     set fish_color_redirection f6c177
     set fish_color_valid_path --underline
+    # Fish abbreviations (expand inline)
+    abbr -a gc 'git commit'
+    abbr -a gca 'git commit --amend'
+    abbr -a gp 'git push'
+    abbr -a gpf 'git push --force-with-lease'
+    abbr -a gl 'git log --oneline --graph'
+    abbr -a gs 'git status'
+    abbr -a gd 'git diff'
+    abbr -a ga 'git add'
+    abbr -a gco 'git checkout'
+    abbr -a gb 'git branch'
+    abbr -a lg lazygit
 end
 
 alias pamcan pacman
@@ -25,6 +39,9 @@ fish_add_path /home/kuro/.opencode/bin
 
 # Local binaries
 fish_add_path /home/kuro/.local/bin
+
+# Cargo
+fish_add_path /home/kuro/.cargo/bin
 
 fish_add_path /home/kuro/.spicetify
 fish_add_path $HOME/.npm-global/bin

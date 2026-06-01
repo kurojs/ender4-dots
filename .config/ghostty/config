@@ -21,10 +21,10 @@ palette = 13=#e8a0bf
 palette = 14=#94a3b8
 palette = 15=#ffffff
 
-background = 06080f
+background = 000000
 foreground = f3f6f9
-cursor-color = c4b5fd
-selection-background = 263356
+cursor-color = 7465a1
+selection-background = 7465a1
 selection-foreground = f3f6f9
 
 
@@ -70,3 +70,4 @@ background-image-position = bottom-right
 background-image-fit = none
 background-image-opacity = 0.3
 background-image-repeat = false
+

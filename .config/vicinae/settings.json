@@ -1,0 +1,84 @@
+// This configuration is merged with the default vicinae configuration file, which you can obtain by running the `vicinae config default` command.
+// Every item defined in this file takes precedence over the values defined in the default config or any other imported file.
+//
+// You can make manual edits to this file, however you should keep in mind that this file may be written to by vicinae when a configuration change is made through the GUI.
+// When that happens, any custom comments or formatting will be lost.
+//
+// If you want to maintain a configuration file with your own comments and formatting, you should create a separate file and add it to the 'imports' array.
+//
+// Learn more about configuration at https://docs.vicinae.com/config
+
+{
+  "$schema": "https://vicinae.com/schemas/config.json",
+  "close_on_focus_loss": false,
+  "favicon_service": "twenty",
+  "search_files_in_root": false,
+  "font": {
+    "rendering": "qt",
+    "normal": {
+      "family": "なぎの",
+      "size": 20
+    }
+  },
+  "theme": {
+    "dark": {
+      "name": "vicinae-dark"
+    }
+  },
+  "telemetry": {
+    "system_info": true
+  },
+  "launcher_window": {
+    "opacity": 0.5,
+    "client_side_decorations": {
+      "enabled": true
+    },
+    "size": {
+      "width": 1160,
+      "height": 640
+    },
+    "layer_shell": {
+      "enabled": true
+    }
+  },
+  "favorites": [
+    "@dagimg-dot/store.vicinae.player-pilot:player-pilot",
+    "@rithvikvibhu/store.vicinae.arch-packages:search-arch-packages",
+    "@kuro/kotoba:kotoba",
+    "@vimtor/store.raycast.video-downloader:index",
+    "@talha_balaj/store.raycast.image-search:search-images",
+    "@kuro/jotoba-anki:jotoba",
+    "@thomaslombart/store.raycast.github:my-issues",
+    "@timrogers/store.raycast.github-copilot:copilot-usage",
+    "@maggie/store.raycast.todo-list:index",
+    "@josephschmitt/store.raycast.gif-search:search",
+    "@clnhs/store.raycast.jotoba:index"
+  ],
+  "providers": {
+    "@kuro/kotoba": {
+      "entrypoints": {
+        "kotoba": {
+          "preferences": {
+            "addAudioNote": false,
+            "ankiPort": "8765",
+            "autoLoadText": false,
+            "elevenlabsAiVoiceId": "Vt0Vg2uCO8fyNxSNCHTb",
+            "elevenlabsVoiceId": "QsAQbwLjj42cienasfhu",
+            "geminiAiLanguage": "Spanish",
+            "geminiCustomPrompt": "",
+            "geminiModel": "gemini-2.5-flash",
+            "showFurigana": true,
+            "userLanguage": "Spanish"
+          }
+        }
+      }
+    },
+    "clipboard": {
+      "enabled": false,
+      "preferences": {
+        "monitoring": false
+      }
+    }
+  }
+}
+

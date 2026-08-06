@@ -87,15 +87,23 @@ Configuration includes:
 - Kurox color palette (ported from the Linux fish config, same as Starship)
 - Git aliases: `gc`, `gca`, `gp`, `gpf`, `gl`, `gs`, `gd`, `ga`, `gco`, `gb`
 - [Atuin](https://atuin.sh) history integration (hook + `Ctrl+R` / up-arrow search)
+- [zoxide](https://github.com/ajeetdsouza/zoxide) smart directory jumping — `z` to jump, `zi` interactive search (PWD hook adds visited dirs)
 - Starship prompt auto-loaded from `vendor/autoload/starship.nu`
 - WezTerm fix: `osc133 = false` — WezTerm stable misinterprets OSC 133 semantic prompts on Windows, causing the prompt to jump while typing. See [wezterm/wezterm#2779](https://github.com/wezterm/wezterm/issues/2779). Fixed in WezTerm nightly 20260117+.
 
 **Install location:** `%APPDATA%\nushell\config.nu`
 
-**Dependencies:** `starship`, `atuin`
+**Dependencies:** `starship`, `atuin`, `zoxide`
 
 ```powershell
-winget install Nushell.Nushell Starship.Starship Atuinsh.Atuin
+winget install Nushell.Nushell Starship.Starship Atuinsh.Atuin ajeetdsouza.zoxide
+```
+
+zoxide's Nushell integration goes in the same `vendor/autoload` folder (note: the shell name is `nushell`, not `nu` — same UTF-8 **without** BOM pattern as Starship):
+
+```powershell
+$content = zoxide init nushell | Out-String
+[System.IO.File]::WriteAllText("$env:APPDATA\nushell\vendor\autoload\zoxide.nu", $content, (New-Object System.Text.UTF8Encoding($false)))
 ```
 
 ---

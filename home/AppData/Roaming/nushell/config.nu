@@ -54,6 +54,7 @@ $env.config.color_config = {
 }
 
 $env.config.shell_integration.osc133 = false
+$env.config.show_banner = false
 
 # --- Aliases git (portados de fish abbr) ---
 alias gc = git commit

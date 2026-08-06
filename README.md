@@ -59,10 +59,11 @@ Terminal configuration with:
 
 [WezTerm](https://wezfurlong.org/wezterm/) by wez. GPU-accelerated terminal emulator with Lua configuration. Used as the primary terminal on Windows.
 
-- Font: IosevkaTerm Nerd Font, size 19
+- Font size: 18
 - Background: Acrylic transparency (`win32_system_backdrop = "Acrylic"`, 80% opacity)
-- Color palette: Gentleman theme (custom dark palette matching ghostty config)
-- Default shell: `powershell.exe`
+- Color palette: EnderDots/ghostty theme (purple/violet accents on near-black background)
+- Default shell: Nushell (`nu`) — see the Nushell section below
+- Keybindings ported from ghostty (splits, pane zoom, resize, clear screen)
 - Max FPS: 240, Kitty graphics protocol enabled
 
 **Install location:** `%USERPROFILE%\.wezterm.lua`
@@ -73,45 +74,54 @@ winget install wez.wezterm
 
 ---
 
-### Nushell
+### Nushell — `home/AppData/Roaming/nushell/config.nu`
 
-[Nushell](https://www.nushell.sh/) by the Nushell contributors. A modern shell that treats all data as structured — commands return tables, lists, and records instead of plain text. Pairs well with Starship for a fully customized shell experience on Windows.
+[Nushell](https://www.nushell.sh/) by the Nushell contributors. A modern shell that treats all data as structured — commands return tables, lists, and records instead of plain text. Pairs well with Starship for a fully customized shell experience on Windows. Default shell in WezTerm.
 
 ```powershell
 winget install Nushell.Nushell
+```
+
+Configuration includes:
+
+- Kurox color palette (ported from the Linux fish config, same as Starship)
+- Git aliases: `gc`, `gca`, `gp`, `gpf`, `gl`, `gs`, `gd`, `ga`, `gco`, `gb`
+- [Atuin](https://atuin.sh) history integration (hook + `Ctrl+R` / up-arrow search)
+- Starship prompt auto-loaded from `vendor/autoload/starship.nu`
+- WezTerm fix: `osc133 = false` — WezTerm stable misinterprets OSC 133 semantic prompts on Windows, causing the prompt to jump while typing. See [wezterm/wezterm#2779](https://github.com/wezterm/wezterm/issues/2779). Fixed in WezTerm nightly 20260117+.
+
+**Install location:** `%APPDATA%\nushell\config.nu`
+
+**Dependencies:** `starship`, `atuin`
+
+```powershell
+winget install Nushell.Nushell Starship.Starship Atuinsh.Atuin
 ```
 
 ---
 
 ### Starship — `.config/starship/starship.toml`
 
-[Starship](https://starship.rs/) by starship-rs contributors. Minimal, fast, cross-shell prompt written in Rust.
+[Starship](https://starship.rs/) by starship-rs contributors. Minimal, fast, cross-shell prompt written in Rust. Replicates the EnderDots Linux prompt (Kurox palette) on Windows.
 
-Prompt layout:
-
-```
-~/path/to/dir               ⚡ 🐍  14:32
-👾 ➜
-```
-
-- Left: current directory in matrix green (`#00ff41`)
-- Right: tech stack icons (auto-detected per project), command duration (if >2s), clock in gray
-- Character: `👾 ➜` in magenta (`#ce08ff`) — red on error
-- Tech detection: Node ⚡, Python 🐍, Rust 🦀, Go 🐹, PHP 🐘, Java ☕, C/C++ ⚙️, Ruby 💎, Docker 🐳
+- Directory: purple (`#8f86e8`)
+- Git branch/status: green (`#86efac`), pink (`#e8a0bf`)
+- Strings/paths: light purple (`#c4b5fd`), operators: amber (`#f6c177`)
+- Errors/status: red (`#eb6f92`), hints: slate gray (`#5c6170`)
 
 **Install:**
 
 ```powershell
-choco install starship
+winget install Starship.Starship
 ```
 
 **Config location:** `%USERPROFILE%\.config\starship.toml`
 
-Add to PowerShell profile (`$PROFILE`):
+For Nushell, generate the autoload file (UTF-8 **without** BOM — PowerShell 5.1 `Set-Content -Encoding UTF8` adds a BOM that breaks Nushell):
 
 ```powershell
-$ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
-Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
+$content = starship init nu | Out-String
+[System.IO.File]::WriteAllText("$env:APPDATA\nushell\vendor\autoload\starship.nu", $content, (New-Object System.Text.UTF8Encoding($false)))
 ```
 
 ---
@@ -248,7 +258,11 @@ AutoHotkey v2 scripts for Windows keybindings.
   tacky-borders/
     config.yaml          Tacky Borders window border config
 home/
-  .wezterm.lua           WezTerm terminal config
+  .wezterm.lua           WezTerm terminal config (default shell: Nushell)
+  AppData/
+    Roaming/
+      nushell/
+        config.nu        Nushell config (Kurox colors, git aliases, Atuin)
   user/
     AppData/
       Local/

@@ -256,11 +256,20 @@ AutoHotkey v2 scripts for Windows keybindings.
 
 ---
 
+### RoutineNotify — `.config/routine-notify/`
+
+[RoutineNotify](https://github.com/kurojs/RoutineNotify) — PLAN 2026 daily schedule as importable app routines. AI voice notifications with a custom sound, one emoji per routine.
+
+**Import:** Settings → Import backup → `routine-notify.json`
+
+---
+
 ## Structure
 
 ```
 .config/
   nvim-windows/          Neovim config (Windows)
+  routine-notify/        RoutineNotify schedule backup (PLAN 2026)
   starship/
     starship.toml        Starship prompt config
   tacky-borders/
